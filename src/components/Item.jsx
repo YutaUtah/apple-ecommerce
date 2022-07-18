@@ -16,7 +16,7 @@ const Item = (props) => {
   }
   console.log(item.image);
   return (
-    <Card sx={{ maxWidth: 345 , minWidth: 345, m: 1}}>
+    <Card sx={{ maxWidth: 345 , minWidth: 345, m: 2}}>
       <CardMedia
         component="img"
         height="300"
