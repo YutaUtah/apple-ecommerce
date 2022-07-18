@@ -5,12 +5,10 @@ import "./Category.css"
 // mui
 import { Box, Stack, Typography } from "@mui/material";
 import { Container } from "@mui/system";
-import productList from "../data/productList.js";
 
 
 
-const Category = () => {
-
+const Category = ({productList}) => {
   return (
     <Container>
       <Box sx={{ mt: 15 }}>
