@@ -6,31 +6,38 @@ import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
+import AddCartIcon from '@mui/icons-material/AddShoppingCart';
 
-const Item = () => {
+const Item = (props) => {
+  let item = props.item;
+
+  function displayPrice (price) {
+    return `From $${price}`
+  }
+  console.log(item.image);
   return (
-    <Card sx={{ maxWidth: 345 , m: 1}}>
+    <Card sx={{ maxWidth: 345 , minWidth: 345, m: 1}}>
       <CardMedia
         component="img"
-        height="194"
-        image="https://i.picsum.photos/id/724/200/300.jpg?hmac=MwcEnqDDOgKg6U3WYPytBPH_jurNEK2_2kcknpgP6wg"
-        alt="Paella dish"
+        height="300"
+        width="500"
+        image={item.image}
+        alt="Product Image"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+        <strong>{item.productName}</strong>
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook.
+        <Typography disableGutters variant="h6" color="text.secondary" align="right">
+          {displayPrice(item.price)}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
+      <CardActions disableSpacing  sx={{ justifyContent: 'flex-end' }}>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
         <IconButton aria-label="share">
-          <ShareIcon />
+          <AddCartIcon />
         </IconButton>
       </CardActions>
     </Card>
