@@ -6,7 +6,9 @@ import "./Category.css";
 import { Box, Stack, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 
-const Category = ({ productList, category }) => {
+import productList from "../data/productList.js";
+
+const OneCategory = ({ productList, category }) => {
 
   return (
     <div>
@@ -24,6 +26,17 @@ const Category = ({ productList, category }) => {
           </div>
         </Box>
       </Container>
+    </div>
+  );
+};
+
+const Category = () => {
+
+  return (
+    <div>
+      {Object.keys(productList).map((key) => (
+        <OneCategory productList={productList} category={key} />
+      ))}
     </div>
   );
 };
