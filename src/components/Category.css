@@ -1,3 +1,6 @@
-.ov {
-    overflow-x: scroll;
+
+.media-controller {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: auto;
 }
