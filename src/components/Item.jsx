@@ -14,7 +14,7 @@ const Item = (props) => {
   function displayPrice (price) {
     return `From $${price}`
   }
-  console.log(item.image);
+
   return (
     <Card sx={{ maxWidth: 345 , minWidth: 345, m: 2}}>
       <CardMedia
@@ -28,7 +28,7 @@ const Item = (props) => {
         <Typography gutterBottom variant="h5" component="div">
         <strong>{item.productName}</strong>
         </Typography>
-        <Typography disableGutters variant="h6" color="text.secondary" align="right">
+        <Typography  variant="h6" color="text.secondary" align="right">
           {displayPrice(item.price)}
         </Typography>
       </CardContent>
