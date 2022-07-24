@@ -1,17 +1,18 @@
-import './App.css';
-import { Link , Outlet } from "react-router-dom";
-import Header from "./components/Header.jsx"
-import DefaultProductPage from "./pages/DefaulProductPage"
+import "./App.css";
+import { Link, Outlet } from "react-router-dom";
+import Header from "./components/Header.jsx";
+import Page from "./pages/Page";
 
-import { Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router } from "react-router-dom";
 
 const App = () => {
   return (
     <div>
-      <Header/>
-      <DefaultProductPage/>
+      <Router>
+        <Page />
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
