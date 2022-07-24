@@ -24,18 +24,12 @@ const Header = () => {
             >
               <AppleIcon />
             </IconButton>
-            <Typography variant="h6">
-              Apple E-Commerce
-            </Typography>
+            <Typography variant="h6">Apple E-Commerce</Typography>
             <Box sx={{ flexGrow: 1 }} />
             <IconButton size="large" color="inherit">
               <FavoriteIcon />
             </IconButton>
-            <IconButton
-              edge="end"
-              size="large"
-              color="inherit"
-            >
+            <IconButton edge="end" size="large" color="inherit">
               <ShoppingCartIcon />
             </IconButton>
           </Toolbar>

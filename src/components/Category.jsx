@@ -9,7 +9,6 @@ import { Container } from "@mui/system";
 import productList from "../data/productList.js";
 
 const OneCategory = ({ productList, category }) => {
-
   return (
     <div>
       <Container>
@@ -18,7 +17,11 @@ const OneCategory = ({ productList, category }) => {
             {category}ストア
           </Typography>
           <div className="media-controller ">
-            <Stack component="div" direction="row" sx={{ mt: 5, overflow: "scroll" }}>
+            <Stack
+              component="div"
+              direction="row"
+              sx={{ mt: 5, overflow: "scroll" }}
+            >
               {productList[category].map((item) => (
                 <Item item={item} key={item.productName} />
               ))}
@@ -31,7 +34,6 @@ const OneCategory = ({ productList, category }) => {
 };
 
 const Category = () => {
-
   return (
     <div>
       {Object.keys(productList).map((key) => (
