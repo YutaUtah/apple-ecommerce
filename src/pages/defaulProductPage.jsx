@@ -1,11 +1,11 @@
 import Category from "../components/Category.jsx";
-
+import Header from "../components/Header.jsx";
 
 const DefaultProductPage = () => {
-
   return (
     <div>
-      <Category/>
+      <Header />
+      <Category />
     </div>
   );
 };
