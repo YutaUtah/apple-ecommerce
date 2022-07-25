@@ -19,6 +19,7 @@ const Item = (props) => {
   return (
     <Card sx={{ maxWidth: 345, minWidth: 345, m: 2 }}>
       {/* <Link to={`/${item.linkName}`}> */}
+      <Link to={`/products`}>
         <CardMedia
           component="img"
           height="300"
@@ -26,7 +27,7 @@ const Item = (props) => {
           image={item.image}
           alt="Product Image"
         />
-      {/* </Link> */}
+      </Link>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           <strong>{item.productName}</strong>
