@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -17,13 +18,15 @@ const Item = (props) => {
 
   return (
     <Card sx={{ maxWidth: 345, minWidth: 345, m: 2 }}>
-      <CardMedia
-        component="img"
-        height="300"
-        width="500"
-        image={item.image}
-        alt="Product Image"
-      />
+      {/* <Link to={`/${item.linkName}`}> */}
+        <CardMedia
+          component="img"
+          height="300"
+          width="500"
+          image={item.image}
+          alt="Product Image"
+        />
+      {/* </Link> */}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           <strong>{item.productName}</strong>
