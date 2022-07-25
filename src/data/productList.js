@@ -2,6 +2,7 @@ const productList = {
   'Mac': [
     {
       category : 'Mac',
+      linkName : 'macAirM1',
       image : 'images/macbook-air-m1.jpeg',
       productName : 'MacBook Air with M1 chip',
       price : 1348,
@@ -11,6 +12,7 @@ const productList = {
     },
     {
       category : 'Mac',
+      linkName : 'macAirM2',
       image : 'images/macbook-air-m2.jpeg',
       productName : 'MacBook Air with M2 chip',
       price : 1648,
@@ -20,6 +22,7 @@ const productList = {
     },
     {
       category : 'Mac',
+      linkName : 'macPro13',
       image : 'images/macbook-pro-13.jpeg',
       productName : 'MacBook Pro 13 Inch',
       price : 1788,
@@ -29,6 +32,7 @@ const productList = {
     },
     {
       category : 'Mac',
+      linkName : 'macPro14',
       image : 'images/macbook-pro-14.jpeg',
       productName : 'MacBook Pro 14 Inch',
       price : 2748,
@@ -38,6 +42,7 @@ const productList = {
     },
     {
       category : 'Mac',
+      linkName : 'macPro16',
       image : 'images/macbook-pro-16.jpeg',
       productName : 'MacBook Pro 16 Inch',
       price : 3388,
@@ -47,6 +52,7 @@ const productList = {
     },
     {
       category : 'Mac',
+      linkName : 'imac24',
       image : 'images/imac-24.jpeg',
       productName : 'iMac 24 Inch',
       price : 1548,
@@ -56,6 +62,7 @@ const productList = {
     },
     {
       category : 'Mac',
+      linkName : 'macMini',
       image : 'images/mac-mini.jpeg',
       productName : 'Mac mini',
       price : 928,
@@ -65,6 +72,7 @@ const productList = {
     },
     {
       category : 'Mac',
+      linkName : 'macStudio',
       image : 'images/mac-studio.jpeg',
       productName : 'Mac Studio',
       price : 2788,
@@ -76,6 +84,7 @@ const productList = {
   'iPhone': [
     {
       category : 'iPhone',
+      linkName : 'iphone13Pro',
       image : 'images/iphone13pro.jpeg',
       productName : 'iPhone 13 Pro',
       price : 1228,
@@ -85,6 +94,7 @@ const productList = {
     },
     {
       category : 'iPhone',
+      linkName : 'iphone13',
       image : 'images/iphone13.jpeg',
       productName : 'iPhone 13',
       price : 988,
@@ -94,6 +104,7 @@ const productList = {
     },
     {
       category : 'iPhone',
+      linkName : 'iphoneSE',
       image : 'images/iphonese.jpeg',
       productName : 'iPhone SE',
       price : 578,
@@ -103,6 +114,7 @@ const productList = {
     },
     {
       category : 'iPhone',
+      linkName : 'iphone12Purple',
       image : 'images/iphone12purple.jpeg',
       productName : 'iPhone 12',
       price : 868,
@@ -112,6 +124,7 @@ const productList = {
     },
     {
       category : 'iPhone',
+      linkName : 'iphone11',
       image : 'images/iphone11.jpeg',
       productName : 'iPhone 11',
       price : 618,
@@ -123,6 +136,7 @@ const productList = {
   'iPad': [
     {
       category : 'iPad',
+      linkName : 'ipadPro',
       image : 'images/ipad-pro.jpeg',
       productName : 'iPad Pro',
       price : 948,
@@ -132,6 +146,7 @@ const productList = {
     },
     {
       category : 'iPad',
+      linkName : 'ipadAir',
       image : 'images/ipad-air.jpeg',
       productName : 'iPad Air',
       price : 748,
@@ -141,6 +156,7 @@ const productList = {
     },
     {
       category : 'iPad',
+      linkName : 'ipadIpad',
       image : 'images/ipad-ipad.jpeg',
       productName : 'iPad',
       price : 398,
@@ -150,6 +166,7 @@ const productList = {
     },
     {
       category : 'iPad',
+      linkName : 'ipad-mini',
       image : 'images/ipad-mini.jpeg',
       productName : 'iPad mini',
       price : 598,
@@ -161,6 +178,7 @@ const productList = {
   'Watch': [
     {
       category : 'Watch',
+      linkName : 'watchS7',
       image : 'images/watch-s7.jpeg',
       productName : 'Apple Watch Series 7',
       price : 488,
@@ -170,6 +188,7 @@ const productList = {
     },
     {
       category : 'Watch',
+      linkName : 'watchSE',
       image : 'images/watch-se.jpeg',
       productName : 'Apple Watch SE',
       price : 328,
@@ -179,6 +198,7 @@ const productList = {
     },
     {
       category : 'Watch',
+      linkName : 'watchS3',
       image : 'images/watch-s3.jpeg',
       productName : 'Apple Watch Series 3',
       price : 228,
@@ -188,6 +208,7 @@ const productList = {
     },
     {
       category : 'Watch',
+      linkName : 'watchNike',
       image : 'images/watch-nike.jpeg',
       productName : 'Apple Watch Nike',
       price : 488,
@@ -197,6 +218,7 @@ const productList = {
     },
     {
       category : 'Watch',
+      linkName : 'watch-Hermes',
       image : 'images/watch-hermes.jpeg',
       productName : 'Apple Watch Hermes',
       price : 1418,
