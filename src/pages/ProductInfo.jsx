@@ -10,6 +10,7 @@ const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(2),
   textAlign: "center",
+  minHeight: 550,
 }));
 
 const ProductInfo = () => {
@@ -20,12 +21,12 @@ const ProductInfo = () => {
         <Box sx={{ mt: 12 }}>
           <h1>Product Detail</h1>
           <Grid sx={{ mt: 2 }} container spacing={2}>
-            <Grid item xs={8}>
+            <Grid item xs={8} >
               <Item>
                 <LeftProductDetail />
               </Item>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={4} >
               <Item>
                 <RightProductDetail />
               </Item>
