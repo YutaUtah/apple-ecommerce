@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }  from "react";
 import { Link } from "react-router-dom"
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
@@ -9,11 +9,23 @@ import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import AddCartIcon from "@mui/icons-material/AddShoppingCart";
 
+
+
 const Item = (props) => {
   let item = props.item;
+  const [list, setList] = useState([]);
 
   function displayPrice(price) {
     return `From $${price}`;
+  }
+
+  const addUserToBeginning = (newElem) => {
+    setList(state => [...state, newElem])
+  }
+
+  const handleClick = ({item}) =>  {
+    // これだと各アイテムごとにArrayを作ってしまうからCategoryに作るべき？
+    addUserToBeginning(item)
   }
 
   return (
@@ -36,11 +48,11 @@ const Item = (props) => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing sx={{ justifyContent: "flex-end" }}>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="add to favorites" onClick={() => handleClick({item})}>
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
-          <AddCartIcon />
+        <IconButton aria-label="share"  >
+          <AddCartIcon  />
         </IconButton>
       </CardActions>
     </Card>
