@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, useParams } from "react-router-dom";
 
+import FavoriteProductPage from "./FavoriteProductPage";
 import DefaultProductPage from "./DefaulProductPage";
 import ProductInfo from "./ProductInfo";
 
@@ -10,6 +11,7 @@ const Page = () => {
       <Routes>
         <Route path="/" element={<DefaultProductPage />} />
         <Route path="products/:productName/" element={<ProductInfo/>} />
+        <Route path="products/favorites/" element={<FavoriteProductPage/>} />
       </Routes>
     </>
   );
