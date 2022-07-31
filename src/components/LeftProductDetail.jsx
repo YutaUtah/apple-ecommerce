@@ -1,5 +1,4 @@
 import React from "react";
-import productList from "../data/productList";
 
 import { styled } from "@mui/material/styles";
 import { Paper } from "@mui/material";
@@ -19,16 +18,16 @@ const ProductItem = styled(Paper)(({ theme }) => ({
   justifyContent: "space-between",
 }));
 
-const LeftProductDetail = () => {
+const LeftProductDetail = ({product}) => {
   return (
     <div>
-      <img src={productList.Mac[0]["image"]} height="300" width="350" />
+      <img src={"/" + product.image} height="300" width="350" />
       <ProductItem>
-        <h2>MacBook Air with M1 chip</h2>
-        <h3>${productList.Mac[0]["price"]}</h3>
+        <h2>{product.productName}</h2>
+        <h3>${product.price}</h3>
       </ProductItem>
       <DescriptionItem>
-        <p>{productList.Mac[0]["description"]}</p>
+        <p>{product.description}</p>
       </DescriptionItem>
     </div>
   );
