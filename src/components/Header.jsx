@@ -8,6 +8,8 @@ import AppleIcon from "@mui/icons-material/Apple";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <div>
@@ -26,9 +28,11 @@ const Header = () => {
             </IconButton>
             <Typography variant="h6">Apple E-Commerce</Typography>
             <Box sx={{ flexGrow: 1 }} />
+            <Link to={`/products/favorites/`}>
             <IconButton size="large" color="inherit">
-              <FavoriteIcon />
+              <FavoriteIcon/>
             </IconButton>
+            </Link>
             <IconButton edge="end" size="large" color="inherit">
               <ShoppingCartIcon />
             </IconButton>
