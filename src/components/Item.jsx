@@ -18,8 +18,7 @@ const Item = (props) => {
 
   return (
     <Card sx={{ maxWidth: 345, minWidth: 345, m: 2 }}>
-      {/* <Link to={`/${item.linkName}`}> */}
-      <Link to={`/products`}>
+      <Link to={`/products/${item.linkName}/`}>
         <CardMedia
           component="img"
           height="300"
