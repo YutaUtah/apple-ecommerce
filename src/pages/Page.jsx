@@ -5,13 +5,11 @@ import DefaultProductPage from "./DefaulProductPage";
 import ProductInfo from "./ProductInfo";
 
 const Page = () => {
-
   return (
     <>
       <Routes>
         <Route path="/" element={<DefaultProductPage />} />
-        <Route path="/products/:productName" element={<ProductInfo/>} />
-        <Route path="/products" element={<ProductInfo/>} />
+        <Route path="products/:productName/" element={<ProductInfo/>} />
       </Routes>
     </>
   );
