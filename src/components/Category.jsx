@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // components
 import Item from "./Item.jsx";
 import "./Category.css";
@@ -8,13 +8,14 @@ import { Container } from "@mui/system";
 
 import productList from "../data/productList.js";
 
-const OneCategory = ({ productList, category }) => {
+const OneCategory = (props) => {
+
   return (
     <div>
       <Container>
         <Box sx={{ mt: 15 }}>
           <Typography sx={{ textAlign: "start" }} variant="h4">
-            {category}ストア
+            {props.category}ストア
           </Typography>
           <div className="media-controller ">
             <Stack
@@ -22,8 +23,8 @@ const OneCategory = ({ productList, category }) => {
               direction="row"
               sx={{ mt: 5, overflow: "scroll" }}
             >
-              {productList[category].map((item) => (
-                <Item item={item} key={item.productName} />
+              {props.productList[props.category].map((item) => (
+                <Item item={item} key={item.productName} addItem={item => props.addItem(item)}/>
               ))}
             </Stack>
           </div>
@@ -33,11 +34,15 @@ const OneCategory = ({ productList, category }) => {
   );
 };
 
-const Category = () => {
+const Category = (props) => {
+  const [item, setItem] = useState('Category')
+  console.log(item)
+  // make sure to press fav icons
   return (
     <div>
+      <h1>{item}</h1>
       {Object.keys(productList).map((key) => (
-        <OneCategory productList={productList} category={key} />
+        <OneCategory productList={productList} category={key} addItem={item => setItem(item)}/>
       ))}
     </div>
   );

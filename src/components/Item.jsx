@@ -13,19 +13,9 @@ import AddCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const Item = (props) => {
   let item = props.item;
-  const [list, setList] = useState([]);
 
   function displayPrice(price) {
     return `From $${price}`;
-  }
-
-  const addUserToBeginning = (newElem) => {
-    setList(state => [...state, newElem])
-  }
-
-  const handleClick = ({item}) =>  {
-    // これだと各アイテムごとにArrayを作ってしまうからCategoryに作るべき？
-    addUserToBeginning(item)
   }
 
   return (
@@ -48,7 +38,7 @@ const Item = (props) => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing sx={{ justifyContent: "flex-end" }}>
-        <IconButton aria-label="add to favorites" onClick={() => handleClick({item})}>
+        <IconButton aria-label="add to favorites" onClick={() => props.addItem({item})}>
           <FavoriteIcon />
         </IconButton>
         <IconButton aria-label="share"  >
