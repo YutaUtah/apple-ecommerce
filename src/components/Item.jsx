@@ -1,4 +1,4 @@
-import React, { useState }  from "react";
+import React from "react";
 import { Link } from "react-router-dom"
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
@@ -13,10 +13,7 @@ import AddCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const Item = (props) => {
   let item = props.item;
-
-  function displayPrice(price) {
-    return `From $${price}`;
-  }
+  const displayPrice = (price) =>  `From $${price}`;
 
   return (
     <Card sx={{ maxWidth: 345, minWidth: 345, m: 2 }}>
