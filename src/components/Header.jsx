@@ -28,7 +28,7 @@ const Header = () => {
             </IconButton>
             <Typography variant="h6">Apple E-Commerce</Typography>
             <Box sx={{ flexGrow: 1 }} />
-            <Link to={`/products/favorites/`}>
+            <Link to={`/favorites`}>
             <IconButton size="large" color="inherit">
               <FavoriteIcon/>
             </IconButton>
