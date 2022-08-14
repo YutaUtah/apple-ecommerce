@@ -16,14 +16,7 @@ const Header = () => {
       <Box>
         <AppBar style={{ background: "#2E3B55" }}>
           <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="apple"
-              sx={{ mr: 2 }}
-              to="/"
-            >
+            <IconButton size="large" edge="start" color="inherit" aria-label="apple" sx={{ mr: 2 }} to="/" >
               <AppleIcon />
             </IconButton>
             <Typography variant="h6">Apple E-Commerce</Typography>
