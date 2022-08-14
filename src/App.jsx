@@ -1,17 +1,17 @@
 import "./App.css";
-import { Link, Outlet } from "react-router-dom";
-import Header from "./components/Header.jsx";
 import Page from "./pages/Page";
+import FavItemProvider from "./providers/FavItemProvider";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
+
 const App = () => {
   return (
-    <div>
+    <FavItemProvider>
       <Router>
         <Page />
       </Router>
-    </div>
+    </FavItemProvider>
   );
 };
 
