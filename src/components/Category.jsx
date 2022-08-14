@@ -1,20 +1,14 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
+
 // components
 import "./Category.css";
-import productList from "../data/productList.js";
 import OneCategory from "./OneCategory"
+import { FavItemContext } from "../providers/FavItemProvider";
 
 
-const Category = () => {
-  const [item, setItem] = useState('Category');
-  const [favList, setFavList] = useState([]);
-
-  const addItemInList = (item) => {
-    setItem(item)
-    const newFavList = [...favList, item];
-    setFavList(newFavList)
-  }
-  console.log(favList)
+const Category = (props) => {
+  const { addItemInList } = useContext(FavItemContext);
+  const { productList } = props;
   return (
     <div>
       {Object.keys(productList).map((key) => (
