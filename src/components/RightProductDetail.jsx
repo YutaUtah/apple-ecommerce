@@ -38,6 +38,7 @@ const QuantityBox = () => {
         bgcolor: "background.paper",
         borderRadius: 1,
         alignItems: "center",
+        defaultaValue: 0,
       }}
     >
       <Typography variant="h6">Quantity</Typography>
@@ -47,11 +48,7 @@ const QuantityBox = () => {
           <Select
             labelId="quantity"
             id="quantity"
-            //   defaultValue={quantity}
-            //   value={quantity}
             label="quantity"
-            //   onChange={(event) => handleChange(event)}
-            //   disabled={product.isInCart}
           >
             <MenuItem value={1}>1</MenuItem>
             <MenuItem value={2}>2</MenuItem>
