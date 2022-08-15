@@ -1,20 +1,22 @@
+// React
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import FavoriteProductPage from "./FavoriteProductPage";
-import DefaultProductPage from "./DefaulProductPage";
-import ProductInfo from "./ProductInfo";
+// Components
+import { CartProductPage } from "./CartProductPage";
+import { DefaultProductPage } from "./DefaulProductPage";
+import { FavoriteProductPage } from "./FavoriteProductPage";
+import { ProductInfo } from "./ProductInfo";
 
-const Page = () => {
+export const Page = () => {
   return (
     <>
       <Routes>
         <Route path="/" element={<DefaultProductPage />} />
         <Route path="products/:productName/" element={<ProductInfo/>} />
         <Route path="favorites/" element={<FavoriteProductPage/>} />
+        <Route path="cart/" element={<CartProductPage/>} />
       </Routes>
     </>
   );
 };
-
-export default Page;
