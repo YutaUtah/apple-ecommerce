@@ -1,5 +1,7 @@
+// React
 import React from "react";
 
+// material UI
 import { styled } from "@mui/material/styles";
 import { Paper } from "@mui/material";
 
@@ -18,7 +20,7 @@ const ProductItem = styled(Paper)(({ theme }) => ({
   justifyContent: "space-between",
 }));
 
-const LeftProductDetail = ({product}) => {
+export const LeftProductDetail = ({product}) => {
   return (
     <div>
       <img src={"/" + product.image} height="300" width="350" />
@@ -32,5 +34,3 @@ const LeftProductDetail = ({product}) => {
     </div>
   );
 };
-
-export default LeftProductDetail;
