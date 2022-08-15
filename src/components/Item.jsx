@@ -1,35 +1,35 @@
-import React, { useState } from "react";
+// React
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom"
 
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+// material UI
+import { Card, CardMedia, CardContent, CardActions, IconButton, Typography } from "@mui/material";
 import AddCartIcon from "@mui/icons-material/AddShoppingCart";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
+// Components
+import { UserContext } from "../providers/ContextProvider";
 
-const Item = (props) => {
-  let item = props.item;
+export const Item = (props) => {
+  const { item } = props;
+  const { addFavItem, addCartItem } = useContext(UserContext);
+  const [modifiedFavItem, setModifiedItem] = useState(false)
+
   const displayPrice = (price) =>  `From $${price}`;
-  const [modifiedItem, setModifiedItem] = useState(false)
 
-  const changeState = (item)=> {
-    setModifiedItem(modifiedItem => !modifiedItem)
-    props.addItem(item)
+  const changeFavState = (item)=> {
+    setModifiedItem(modifiedFavItem => !modifiedFavItem)
+    addFavItem(item)
   }
+
+  const changeCartState = (item)=> {
+    addCartItem(item)
+  }
+
   return (
     <Card sx={{ maxWidth: 345, minWidth: 345, m: 2 }}>
       <Link to={`/products/${item.linkName}/`}>
-        <CardMedia
-          component="img"
-          height="300"
-          width="500"
-          image={item.image}
-          alt="Product Image"
-        />
+        <CardMedia component="img" height="300" width="500" image={item.image} alt="Product Image"/>
       </Link>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -40,15 +40,13 @@ const Item = (props) => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing sx={{ justifyContent: "flex-end" }}>
-        <IconButton aria-label="add to favorites" style={modifiedItem ? {color:'red'} : {color: 'darkgray'}} onClick={() => changeState({item})} >
+        <IconButton aria-label="add to favorites" style={modifiedFavItem ? {color:'red'} : {color: 'darkgray'}} onClick={() => changeFavState({item})} >
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share"  >
-          <AddCartIcon  />
+        <IconButton aria-label="share" onClick={() => changeCartState({item})} >
+          <AddCartIcon />
         </IconButton>
       </CardActions>
     </Card>
   );
 };
-
-export default Item;
