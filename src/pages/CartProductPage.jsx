@@ -1,19 +1,19 @@
 // React
 import React, { useContext } from "react";
+import { UserContext } from "../providers/ContextProvider";
 
 // components
 import "../components/Category.css";
 import { Category } from "../components/Category";
 import { Header } from "../components/Header";
-import { UserContext } from "../providers/ContextProvider";
 
-export const FavoriteProductPage = () => {
-  const { favList } = useContext(UserContext);
-
+export const CartProductPage = () => {
+  const { cartList } = useContext(UserContext);
+  console.log(cartList)
   return (
     <div>
       <Header />
-      <Category productList={favList} />
+      <Category productList={cartList} />
     </div>
   );
 };
