@@ -7,9 +7,9 @@ const FavItemProvider = (props) => {
     const [favList, setFavList] = useState({});
 
     const addItemInList = ({item}) => {
+        item.isFavorite = !item.isFavorite
         const category = item.category
         favList[category] === undefined ? favList[category] = [item] : favList[category].push(item)
-
         setFavList(favList)
       }
 
