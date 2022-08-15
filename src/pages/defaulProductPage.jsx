@@ -1,10 +1,13 @@
-import Category from "../components/Category.jsx";
-import Header from "../components/Header.jsx";
+// React
+import React, { useContext } from "react";
 
-// future plan: need to filter productlist
-import productList from "../data/productList.js";
+// components
+import { Category } from "../components/Category.jsx";
+import { Header } from "../components/Header.jsx";
+import { UserContext } from "../providers/ContextProvider";
 
-const DefaultProductPage = () => {
+export const DefaultProductPage = () => {
+  const { productList } = useContext(UserContext);
 
   return (
     <div>
@@ -13,5 +16,3 @@ const DefaultProductPage = () => {
     </div>
   );
 };
-
-export default DefaultProductPage;
