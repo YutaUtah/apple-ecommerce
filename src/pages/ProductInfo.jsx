@@ -1,13 +1,16 @@
-import Header from "../components/Header.jsx";
-import LeftProductDetail from "../components/LeftProductDetail.jsx";
-import RightProductDetail from "../components/RightProductDetail.jsx";
-import productList from "../data/productList.js";
-
+// React
 import { useParams } from "react-router-dom";
 
+// Components
+import { Header } from "../components/Header.jsx";
+import { LeftProductDetail } from "../components/LeftProductDetail.jsx";
+import { RightProductDetail } from "../components/RightProductDetail.jsx";
 
+// material UI
 import { styled } from "@mui/material/styles";
 import { Box, Container, Paper, Grid } from "@mui/material";
+import { useContext } from "react";
+import { UserContext } from "../providers/ContextProvider.jsx";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -17,10 +20,11 @@ const Item = styled(Paper)(({ theme }) => ({
   minHeight: 550,
 }));
 
-const ProductInfo = () => {
+export const ProductInfo = () => {
   const params = useParams();
+  const { productList } = useContext(UserContext);
 
-  function getProductfromLinkName (productList) {
+  const getProductfromLinkName = (productList) => {
     for (const key of Object.keys(productList)) {
       if (typeof productList[key].find((product) => {return product.linkName == params.productName;}) === "object") {
         return  productList[key].find((product) => {return product.linkName == params.productName;})
@@ -29,7 +33,6 @@ const ProductInfo = () => {
   }
 
   const product = getProductfromLinkName(productList);
-
 
   return (
     <div>
@@ -54,5 +57,3 @@ const ProductInfo = () => {
     </div>
   );
 };
-
-export default ProductInfo;
