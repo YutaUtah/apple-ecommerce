@@ -1,17 +1,20 @@
-import "./App.css";
-import Page from "./pages/Page";
-import FavItemProvider from "./providers/FavItemProvider";
-
+// React
+import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
+
+// Component
+import "./App.css";
+import { Page } from "./pages/Page";
+import ContextProvider from "./providers/ContextProvider";
 
 
 const App = () => {
   return (
-    <FavItemProvider>
+    <ContextProvider>
       <Router>
         <Page />
       </Router>
-    </FavItemProvider>
+    </ContextProvider>
   );
 };
 
