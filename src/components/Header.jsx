@@ -21,14 +21,16 @@ const Header = () => {
             </IconButton>
             <Typography variant="h6">Apple E-Commerce</Typography>
             <Box sx={{ flexGrow: 1 }} />
-            <Link to={`/favorites`}>
-            <IconButton size="large" color="inherit">
-              <FavoriteIcon/>
-            </IconButton>
+            <Link to={`/favorites`} >
+              <IconButton size="large" style={{ color: 'white' }}  >
+                <FavoriteIcon />
+              </IconButton>
             </Link>
-            <IconButton edge="end" size="large" color="inherit">
-              <ShoppingCartIcon />
-            </IconButton>
+            <Link to={`/cart`} >
+              <IconButton size="large" style={{ color: 'white' }} >
+                <ShoppingCartIcon />
+              </IconButton>
+            </Link>
           </Toolbar>
         </AppBar>
       </Box>
