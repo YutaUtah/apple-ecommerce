@@ -5,6 +5,7 @@ import Header from "../components/Header.jsx";
 import productList from "../data/productList.js";
 
 const DefaultProductPage = () => {
+
   return (
     <div>
       <Header />

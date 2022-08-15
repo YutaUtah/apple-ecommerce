@@ -9,6 +9,7 @@ import { FavItemContext } from "../providers/FavItemProvider";
 const Category = (props) => {
   const { addItemInList } = useContext(FavItemContext);
   const { productList } = props;
+
   return (
     <div>
       {Object.keys(productList).map((key) => (
