@@ -1,26 +1,12 @@
+// React
 import React from "react";
-import {
-  Box,
-  Button,
-  Typography,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  Select,
-} from "@mui/material";
+
+// material UI
+import { Box, Button, Typography, MenuItem, FormControl, InputLabel, Select } from "@mui/material";
 
 const PriceBox = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        p: 1,
-        m: 1,
-        bgcolor: "background.paper",
-        borderRadius: 1,
-      }}
-    >
+    <Box sx={{ display: "flex", justifyContent: "space-between", p: 1, m: 1, bgcolor: "background.paper", borderRadius: 1 }}>
       <Typography variant="h6">Price</Typography>
       <Typography variant="h6">$1000</Typography>
     </Box>
@@ -104,7 +90,7 @@ const ItemButton = (props) => {
   );
 };
 
-const RightProductDetail = () => {
+export const RightProductDetail = () => {
   return (
     <div>
       <PriceBox />
@@ -116,5 +102,3 @@ const RightProductDetail = () => {
     </div>
   );
 };
-
-export default RightProductDetail;
