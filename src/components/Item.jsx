@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom"
 
 import Card from "@mui/material/Card";
@@ -11,11 +11,15 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import AddCartIcon from "@mui/icons-material/AddShoppingCart";
 
 
-
 const Item = (props) => {
   let item = props.item;
   const displayPrice = (price) =>  `From $${price}`;
+  const [modifiedItem, setModifiedItem] = useState(false)
 
+  const changeState = (item)=> {
+    setModifiedItem(modifiedItem => !modifiedItem)
+    props.addItem(item)
+  }
   return (
     <Card sx={{ maxWidth: 345, minWidth: 345, m: 2 }}>
       <Link to={`/products/${item.linkName}/`}>
@@ -36,7 +40,7 @@ const Item = (props) => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing sx={{ justifyContent: "flex-end" }}>
-        <IconButton aria-label="add to favorites" onClick={() => props.addItem({item})}>
+        <IconButton aria-label="add to favorites" style={modifiedItem ? {color:'red'} : {color: 'darkgray'}} onClick={() => changeState({item})} >
           <FavoriteIcon />
         </IconButton>
         <IconButton aria-label="share"  >
