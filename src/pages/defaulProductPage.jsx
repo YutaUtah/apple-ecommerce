@@ -1,7 +1,7 @@
 import Category from "../components/Category.jsx";
 import Header from "../components/Header.jsx";
 
-// future plan: need to filter productlist 
+// future plan: need to filter productlist
 import productList from "../data/productList.js";
 
 const DefaultProductPage = () => {
