@@ -1,24 +1,24 @@
-import Box from "@mui/material/Box";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
+// React
+import React from "react";
+import { Link } from "react-router-dom";
 
+// material UI
+import { Box, AppBar, Toolbar, IconButton, Typography } from "@mui/material";
 import AppleIcon from "@mui/icons-material/Apple";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-import { Link } from "react-router-dom";
-
-const Header = () => {
+export const Header = () => {
   return (
     <div>
       <Box>
         <AppBar style={{ background: "#2E3B55" }}>
           <Toolbar>
-            <IconButton size="large" style={{ color: 'white' }} sx={{ mr: 2 }} to="/" >
-              <AppleIcon />
-            </IconButton>
+            <Link to={'/'} >
+              <IconButton size="large" style={{ color: 'white' }} sx={{ mr: 2 }} to="/" >
+                <AppleIcon />
+              </IconButton>
+            </Link>
             <Typography variant="h6">Apple E-Commerce</Typography>
             <Box sx={{ flexGrow: 1 }} />
             <Link to={`/favorites`} >
@@ -37,5 +37,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;
