@@ -14,7 +14,6 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import { Item } from "../components/Item";
 
 export const FavoriteProductPage = () => {
   const { favList } = useContext(UserContext);
@@ -22,35 +21,28 @@ export const FavoriteProductPage = () => {
     Object.keys(favList).map((key, value) => console.log(favList[key][value]));
   }
 
+
+//   TODO: コンポーネント化
+//   　　　　Map functionで呼び出し
   return (
     <div>
       <Header />
-
-      {/* <Category productList={favList} /> */}
-      {/* TODO: */}
-      {/* {Object.keys(favList).map((key) => (
-        <OneCategory productList={favList} category={key} key={key} />
-      ))} */}
-      {/* {Object.keys(favList).map((key, value) => (
-    favList[key][value].productName
-))} */}
       {Object.keys(favList).map((key, value) => (
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <Card
-            sx={{ minHeight: 250, minWidth: 800, m: 10, display: "flex", alignItems: "center", justifyContent: "space-between", border: "solid" }} >
+        <Box sx={{ display: "flex", justifyContent: "center" }} key={ favList[key][value].price }>
+            <Card sx={{ minHeight: 250, minWidth: 800, m: 10, display: "flex", alignItems: "center", justifyContent: "space-between", border: "solid" }} >
             <Grid container spacing={2}>
                 <Grid item xs={6} md={4}>
-                <CardMedia component="img" height="200" width="100" image={ favList[key][value].image } alt="Product Image" />
+                  <CardMedia component="img" height="200" width="100" image={ favList[key][value].image } alt="Product Image" />
                 </Grid>
                 <Grid xs={6}md={6}sx={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
-                <Typography gutterBottom variant="h5" component="div">
+                  <Typography gutterBottom variant="h5" component="div">
                     {favList[key][value].productName}
-                </Typography>
+                  </Typography>
                 </Grid>
                 <Grid xs={6} md={2} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                <Typography variant="h6" color="text.secondary">
-                {favList[key][value].price}
-                </Typography>
+                  <Typography variant="h6" color="text.secondary">
+                    {favList[key][value].price}
+                  </Typography>
                 </Grid>
             </Grid>
             </Card>
