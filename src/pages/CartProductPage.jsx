@@ -9,7 +9,7 @@ import { Header } from "../components/Header";
 
 export const CartProductPage = () => {
   const { cartList } = useContext(UserContext);
-  console.log(cartList)
+
   return (
     <div>
       <Header />
