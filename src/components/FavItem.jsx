@@ -1,0 +1,63 @@
+import { Box, Button, Card, CardMedia, Grid, Typography } from "@mui/material";
+import react from "react";
+
+const ItemButton = (props) => {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        //   p: 1,
+        //   mx: 1,
+          bgcolor: "background.paper",
+          borderRadius: 1,
+        }}
+      >
+        <Typography variant="h6">
+          <Button
+            style={{ minWidth: "170px", minHeight: "30px" }}
+            variant="contained"
+          >
+            {props.buttonTitle}
+          </Button>
+        </Typography>
+      </Box>
+    );
+  };
+
+// TODO: header margin to standardize
+// TODO: button to standardize
+
+
+export const FavItem = (props) => {
+  const { productName, image, price } = props;
+
+  const displayPrice = (price) => {
+    return `$${price}`
+  }
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center" }} key={productName} >
+      <Card
+        sx={{ minHeight: 250, minWidth: 800, mb: 1, display: "flex", alignItems: "center", justifyContent: "space-between", border: "solid" }}>
+        <Grid container spacing={2}>
+          <Grid item xs={6} md={4}>
+            <CardMedia component="img" height="200" width="100" image={image} alt="Product Image"/>
+          </Grid>
+          <Grid item xs={6} md={5} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
+            <Typography gutterBottom variant="h5" component="div">
+              {productName}
+            </Typography>
+          </Grid>
+          <Grid item xs={6} md={3}
+            sx={{display: "flex",justifyContent: "center", alignItems: "center" }}>
+            <Typography variant="h5" color="text.secondary">
+              {displayPrice(price)}
+              <ItemButton buttonTitle="Add Favorite" />
+              <ItemButton buttonTitle="Add To Cart" />
+            </Typography>
+          </Grid>
+        </Grid>
+      </Card>
+    </Box>
+  );
+};
