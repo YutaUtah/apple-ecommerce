@@ -6,6 +6,7 @@ import "../components/Category.css";
 import { UserContext } from "../providers/ContextProvider";
 import { FavItem } from "../components/FavItem";
 import { Header } from "../components/Header";
+import { Container, Typography } from "@mui/material";
 
 export const FavoriteProductPage = () => {
   const { favList } = useContext(UserContext);
@@ -13,12 +14,10 @@ export const FavoriteProductPage = () => {
   return (
     <div>
       <Header />
-      <div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <h1>Your Favorite</h1>
+      <Container>
+        <Typography sx={{ textAlign: "start", mx: 22, my: 2}} variant="h4">
+          Favorite List
+        </Typography>
         {Object.keys(favList).map((key) => {
           return (
             <div>
@@ -30,7 +29,7 @@ export const FavoriteProductPage = () => {
             </div>
           );
         })}
-      </div>
+      </Container>
     </div>
   );
 };
