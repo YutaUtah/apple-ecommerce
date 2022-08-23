@@ -4,20 +4,14 @@ import react from "react";
 const ItemButton = (props) => {
     return (
       <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-        //   p: 1,
-        //   mx: 1,
-          bgcolor: "background.paper",
-          borderRadius: 1,
-        }}
-      >
+        sx={{display: "flex",　justifyContent: "center",
+              p: 1,
+            //   mx: 1,
+            bgcolor: "background.paper",
+            borderRadius: 1,
+            }}>
         <Typography variant="h6">
-          <Button
-            style={{ minWidth: "170px", minHeight: "30px" }}
-            variant="contained"
-          >
+          <Button　style={{ minWidth: "170px", minHeight: "30px" }}　variant="contained"　>
             {props.buttonTitle}
           </Button>
         </Typography>
@@ -27,6 +21,7 @@ const ItemButton = (props) => {
 
 // TODO: header margin to standardize
 // TODO: button to standardize
+// TODO: depending on the name, the container gets streched
 
 
 export const FavItem = (props) => {
@@ -50,8 +45,8 @@ export const FavItem = (props) => {
           </Grid>
           <Grid item xs={6} md={3}
             sx={{display: "flex",justifyContent: "center", alignItems: "center" }}>
-            <Typography variant="h5" color="text.secondary">
-              {displayPrice(price)}
+            <Typography variant="h5" color="text.secondary" sx={{display: "column", textAlign: "end", mx: 20 }}>
+              <div className="text-end mx-2">{displayPrice(price)}</div>
               <ItemButton buttonTitle="Add Favorite" />
               <ItemButton buttonTitle="Add To Cart" />
             </Typography>
