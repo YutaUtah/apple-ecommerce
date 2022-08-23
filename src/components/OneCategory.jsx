@@ -13,7 +13,7 @@ export const OneCategory = (props) => {
     return (
       <div>
         <Container>
-          <Box sx={{ mt: 15 }}>
+          <Box　sx={{ pb: 12 }}>
             <Typography sx={{ textAlign: "start" }} variant="h4">
               {category}ストア
             </Typography>
