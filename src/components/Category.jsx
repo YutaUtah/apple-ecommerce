@@ -2,7 +2,6 @@
 import React from "react";
 
 // components
-import "./Category.css";
 import { OneCategory } from "./OneCategory"
 
 export const Category = (props) => {
