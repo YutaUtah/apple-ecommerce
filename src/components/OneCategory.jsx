@@ -15,7 +15,7 @@ export const OneCategory = (props) => {
         <Container>
           <Box　sx={{ pb: 12 }}>
             <Typography sx={{ textAlign: "start" }} variant="h4">
-              {category}ストア
+              {category}
             </Typography>
             <div className="media-controller ">
               <Stack component="div" direction="row" sx={{ mt: 5, overflow: "scroll" }}>
