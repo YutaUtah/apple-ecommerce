@@ -26,6 +26,19 @@ const ContextProvider = (props) => {
         }
     }
 
+    const removeItemBase = () => {
+        console.log('removed item')
+    }
+
+    const removeFavItem = () => {
+        removeItemBase();
+        console.log('removed Favitem')
+    }
+    const removeCartItem = () => {
+        removeItemBase();
+        console.log('removed Cartitem')
+    }
+
     const addFavItem = ({item}) => {
         addItemBase(item, favList)
         setFavList(favList)
@@ -37,7 +50,7 @@ const ContextProvider = (props) => {
       }
 
     return (
-        <UserContext.Provider value={{ favList, addFavItem, cartList, addCartItem, productList }}>
+        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, removeCartItem, productList }}>
           {children}
         </UserContext.Provider>
     )
