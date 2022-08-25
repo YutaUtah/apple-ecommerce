@@ -15,7 +15,7 @@ export const FavoriteProductPage = () => {
     <div>
       <Header />
       <Container>
-        <Typography sx={{ textAlign: "start", mx: 22, my: 2}} variant="h4">
+        <Typography sx={{ textAlign: "start", mb: 5}} variant="h4">
           Favorite List
         </Typography>
         {Object.keys(favList).map((key) => {
@@ -23,7 +23,7 @@ export const FavoriteProductPage = () => {
             <div>
               {favList[key].map((value) => (
                 <div>
-                  <FavItem productName={value.productName} image={value.image} price={value.price} />
+                  <FavItem  item={value} />
                 </div>
               ))}
             </div>
