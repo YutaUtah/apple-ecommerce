@@ -22,9 +22,7 @@ export const Item = (props) => {
     addFavItem(item)
   }
 
-  const changeCartState = (item)=> {
-    addCartItem(item)
-  }
+  const changeCartState = (item)=> addCartItem(item)
 
   return (
     <Card sx={{ maxWidth: 345, minWidth: 345, m: 2 }}>
