@@ -2,7 +2,6 @@
 import React, { useContext } from "react";
 
 // components
-import "../components/Category.css";
 import { UserContext } from "../providers/ContextProvider";
 import { FavItem } from "../components/FavItem";
 import { Header } from "../components/Header";
