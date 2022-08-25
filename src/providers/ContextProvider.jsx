@@ -8,6 +8,10 @@ export const UserContext = createContext({});
 
 const ContextProvider = (props) => {
     const { children } = props;
+    // need to set favItem to re-render the page when favorite icon is hit in FavProduct page
+    const [favItem, setFavItem] = useState({});
+    const [cartItem, setCartItem] = useState({});
+
     const [favList, setFavList] = useState({});
     const [cartList, setCartList] = useState({});
 
@@ -26,17 +30,19 @@ const ContextProvider = (props) => {
         }
     }
 
-    const removeItemBase = () => {
-        console.log('removed item')
+    const removeItemBase = (item, listByPurpose) => {
+        const category = item.category
+        const index = listByPurpose[category].indexOf(item)
+        listByPurpose[category].splice(index, 1)
+        if (listByPurpose[category].length === 0) {
+            delete listByPurpose[category];
+        }
     }
 
-    const removeFavItem = () => {
-        removeItemBase();
-        console.log('removed Favitem')
-    }
-    const removeCartItem = () => {
-        removeItemBase();
-        console.log('removed Cartitem')
+    const removeFavItem = ({item}) => {
+        removeItemBase(item, favList);
+        setFavItem(item)
+        setFavList(favList);
     }
 
     const addFavItem = ({item}) => {
@@ -50,7 +56,7 @@ const ContextProvider = (props) => {
       }
 
     return (
-        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, removeCartItem, productList }}>
+        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, productList }}>
           {children}
         </UserContext.Provider>
     )
