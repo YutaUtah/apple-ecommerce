@@ -36,9 +36,9 @@ export const FavItem = (props) => {
         sx={{ minHeight: 250, minWidth: 800, mb: 1, display: "flex", alignItems: "center", justifyContent: "space-between", border: "solid" }}>
         <Grid container spacing={2}>
           <Grid item xs={6} md={4}>
-            <CardMedia component="img" height="200" width="100" image={image} alt="Product Image"/>
+            <CardMedia component="img" height="300" width="200" image={image} alt={productName} sx={{m:2}}/>
           </Grid>
-          <Grid item xs={6} md={5} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
+          <Grid item xs={6} md={5} sx={{ display: "flex", justifyContent: "center", alignItems: "center", minWidth: "370px"}} >
             <Typography gutterBottom variant="h5" component="div">
               {productName}
             </Typography>
