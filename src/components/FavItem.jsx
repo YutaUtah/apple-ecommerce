@@ -8,16 +8,15 @@ import { Box, Button, Card, CardMedia, Grid, Typography } from "@mui/material";
 import { UserContext } from "../providers/ContextProvider";
 
 
-
 const ItemButton = (props) => {
 
-  const { item, changeItemState } = props;
+  const { changeItemState } = props;
 
     return (
       <Box
         sx={{display: "flex",　justifyContent: "center",
               p: 1,
-            //   mx: 1,
+              mx: 1,
             bgcolor: "background.paper",
             borderRadius: 1,
             }}>
@@ -34,11 +33,9 @@ const ItemButton = (props) => {
 export const FavItem = (props) => {
 
   const { item } = props;
-  const { removeFavItem, removeCartItem } = useContext(UserContext);
+  const { removeFavItem, addCartItem } = useContext(UserContext);
 
-  const displayPrice = (price) => {
-    return `$${price}`
-  }
+  const displayPrice = (price) => `$${price}`
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }} key={item.productName} >
@@ -56,9 +53,9 @@ export const FavItem = (props) => {
           <Grid item xs={6} md={3}
             sx={{display: "flex",justifyContent: "center", alignItems: "center" }}>
             <Typography variant="h5" color="text.secondary" sx={{display: "column", textAlign: "end", mx: 20 }}>
-              <div className="text-end mx-2">{displayPrice(item.price)}</div>
-              <ItemButton buttonTitle="Remove Favorite" item={item} changeItemState={()=>removeFavItem()}/>
-              <ItemButton buttonTitle="Remove from Cart" item={item} changeItemState={()=>removeCartItem()}/>
+              <div className="text-end mx-3">{displayPrice(item.price)}</div>
+              <ItemButton buttonTitle="Remove Favorite" item={item} changeItemState={()=>removeFavItem({item})}/>
+              <ItemButton buttonTitle="Add to Cart" item={item} changeItemState={()=>addCartItem({item})}/>
             </Typography>
           </Grid>
         </Grid>
