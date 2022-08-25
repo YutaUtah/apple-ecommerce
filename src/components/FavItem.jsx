@@ -10,13 +10,8 @@ import { UserContext } from "../providers/ContextProvider";
 
 
 const ItemButton = (props) => {
-  const { removeFavItem, removeCartItem } = useContext(UserContext);
 
-  const { item } = props;
-  const changeFavState = ()=> {
-    console.log('click')
-    removeFavItem();
-  }
+  const { item, changeItemState } = props;
 
     return (
       <Box
@@ -27,7 +22,7 @@ const ItemButton = (props) => {
             borderRadius: 1,
             }}>
         <Typography variant="h6">
-          <Button　style={{ minWidth: "170px", minHeight: "30px" }}　variant="contained" onClick={() => changeFavState()}　>
+          <Button　style={{ minWidth: "200px", minHeight: "30px" }}　variant="contained" onClick={() => changeItemState()}　>
             {props.buttonTitle}
           </Button>
         </Typography>
@@ -39,6 +34,7 @@ const ItemButton = (props) => {
 export const FavItem = (props) => {
 
   const { item } = props;
+  const { removeFavItem, removeCartItem } = useContext(UserContext);
 
   const displayPrice = (price) => {
     return `$${price}`
@@ -53,7 +49,7 @@ export const FavItem = (props) => {
             <CardMedia component="img" height="300" width="200" image={item.image} alt={item.productName} sx={{m:2}}/>
           </Grid>
           <Grid item xs={6} md={5} sx={{ display: "flex", justifyContent: "center", alignItems: "center", minWidth: "370px"}} >
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h4" component="div">
               {item.productName}
             </Typography>
           </Grid>
@@ -61,8 +57,8 @@ export const FavItem = (props) => {
             sx={{display: "flex",justifyContent: "center", alignItems: "center" }}>
             <Typography variant="h5" color="text.secondary" sx={{display: "column", textAlign: "end", mx: 20 }}>
               <div className="text-end mx-2">{displayPrice(item.price)}</div>
-              <ItemButton buttonTitle="Remove Favorite" item={item}/>
-              <ItemButton buttonTitle="Remove from Cart" />
+              <ItemButton buttonTitle="Remove Favorite" item={item} changeItemState={()=>removeFavItem()}/>
+              <ItemButton buttonTitle="Remove from Cart" item={item} changeItemState={()=>removeCartItem()}/>
             </Typography>
           </Grid>
         </Grid>
