@@ -1,12 +1,16 @@
+// React
 import React, { useContext } from "react";
+
+// material UI
 import { Box, Button, Card, CardMedia, Grid, Typography } from "@mui/material";
 
+// Components
 import { UserContext } from "../providers/ContextProvider";
 
 
 
 const ItemButton = (props) => {
-  const { removeFavItem, removeCartItem} = useContext(UserContext);
+  const { removeFavItem, removeCartItem } = useContext(UserContext);
 
   const { item } = props;
   const changeFavState = ()=> {
