@@ -30,10 +30,10 @@ const ItemButton = (props) => {
   };
 
 
-export const FavItem = (props) => {
+export const CartItem = (props) => {
 
   const { item } = props;
-  const { removeFavItem, addCartItem } = useContext(UserContext);
+  const { removeFavItem, proceedPayItem } = useContext(UserContext);
 
   const displayPrice = (price) => `$${price}`
 
@@ -54,8 +54,8 @@ export const FavItem = (props) => {
             sx={{display: "flex",justifyContent: "center", alignItems: "center" }}>
             <Typography variant="h5" color="text.secondary" sx={{display: "column", textAlign: "end", mx: 20 }}>
               <div className="text-end mx-3">{displayPrice(item.price)}</div>
-              <ItemButton buttonTitle="Remove Favorite" item={item} changeItemState={()=>removeFavItem({item})}/>
-              <ItemButton buttonTitle="Add to Cart" item={item} changeItemState={()=>addCartItem({item})}/>
+              <ItemButton buttonTitle="Remove from Cart" item={item} changeItemState={()=>removeFavItem({item})}/>
+              <ItemButton buttonTitle="Proceed Payment" item={item} changeItemState={()=>proceedPayItem({item})}/>
             </Typography>
           </Grid>
         </Grid>
