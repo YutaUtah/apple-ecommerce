@@ -55,8 +55,12 @@ const ContextProvider = (props) => {
         setCartList(cartList)
       }
 
+    const proceedPayItem = ({item}) => {
+        console.log(item)
+        alert(`Paid ${item.price} USD for ${item.productName}, thank you!`)
+    }
     return (
-        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, productList }}>
+        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, productList, proceedPayItem }}>
           {children}
         </UserContext.Provider>
     )
