@@ -1,10 +1,11 @@
 // React
 import React, { useContext } from "react";
-import { UserContext } from "../providers/ContextProvider";
 
 // components
-import { Category } from "../components/Category";
+import { UserContext } from "../providers/ContextProvider";
+import { FavItem } from "../components/FavItem";
 import { Header } from "../components/Header";
+import { Container, Typography } from "@mui/material";
 
 export const CartProductPage = () => {
   const { cartList } = useContext(UserContext);
@@ -12,7 +13,22 @@ export const CartProductPage = () => {
   return (
     <div>
       <Header />
-      <Category productList={cartList} />
+      <Container>
+        <Typography sx={{ textAlign: "start", mb: 5}} variant="h4">
+          Cart List
+        </Typography>
+        {Object.keys(cartList).map((key) => {
+          return (
+            <div>
+              {cartList[key].map((value) => (
+                <div>
+                  <FavItem  item={value} />
+                </div>
+              ))}
+            </div>
+          );
+        })}
+      </Container>
     </div>
   );
 };
