@@ -45,6 +45,12 @@ const ContextProvider = (props) => {
         setFavList(favList);
     }
 
+    const removeCartItem = ({item}) => {
+        removeItemBase(item, cartList);
+        setCartItem(item)
+        setCartList(cartList);
+    }
+
     const addFavItem = ({item}) => {
         addItemBase(item, favList)
         setFavList(favList)
@@ -60,7 +66,7 @@ const ContextProvider = (props) => {
         alert(`Paid ${item.price} USD for ${item.productName}, thank you!`)
     }
     return (
-        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, productList, proceedPayItem }}>
+        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, removeCartItem, productList, proceedPayItem }}>
           {children}
         </UserContext.Provider>
     )
