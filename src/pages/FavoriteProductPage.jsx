@@ -22,7 +22,7 @@ export const FavoriteProductPage = () => {
             <div>
               {favList[key].map((value) => (
                 <div>
-                  <FavItem  item={value} />
+                  <FavItem  item={value} key={value.productName} />
                 </div>
               ))}
             </div>
