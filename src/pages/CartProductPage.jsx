@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 
 // components
 import { UserContext } from "../providers/ContextProvider";
-import { FavItem } from "../components/FavItem";
+import { CartItem } from "../components/CartItem";
 import { Header } from "../components/Header";
 import { Container, Typography } from "@mui/material";
 
@@ -22,7 +22,7 @@ export const CartProductPage = () => {
             <div>
               {cartList[key].map((value) => (
                 <div>
-                  <FavItem  item={value} />
+                  <CartItem item={value} />
                 </div>
               ))}
             </div>
