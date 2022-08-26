@@ -15,6 +15,8 @@ const ContextProvider = (props) => {
     const [favList, setFavList] = useState({});
     const [cartList, setCartList] = useState({});
 
+    const displayPrice = (price) =>  `From $${price}`;
+
     const addItemBase = (item, listByPurpose) => {
         const category = item.category
         if ( listByPurpose[category] === undefined ) {
@@ -66,7 +68,7 @@ const ContextProvider = (props) => {
         alert(`Paid ${item.price} USD for ${item.productName}, thank you!`)
     }
     return (
-        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, removeCartItem, productList, proceedPayItem }}>
+        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, removeCartItem, productList, proceedPayItem, displayPrice }}>
           {children}
         </UserContext.Provider>
     )
