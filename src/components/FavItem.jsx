@@ -33,9 +33,7 @@ const ItemButton = (props) => {
 export const FavItem = (props) => {
 
   const { item } = props;
-  const { removeFavItem, addCartItem } = useContext(UserContext);
-
-  const displayPrice = (price) => `$${price}`
+  const { removeFavItem, addCartItem, displayPrice } = useContext(UserContext);
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }} key={item.productName} >

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 // mui
 import { Box, Stack, Typography } from "@mui/material";
@@ -6,10 +6,12 @@ import { Container } from "@mui/system";
 
 // components
 import { Item } from "../components/Item.jsx";
+import { UserContext } from "../providers/ContextProvider.jsx";
 
 export const OneCategory = (props) => {
-    const { category, productList } = props;
-
+    const { category } = props;
+    const { productList } = useContext(UserContext);
+    
     return (
       <div>
         <Container>

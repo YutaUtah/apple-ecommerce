@@ -12,10 +12,8 @@ import { UserContext } from "../providers/ContextProvider";
 
 export const Item = (props) => {
   const { item } = props;
-  const { addFavItem, addCartItem } = useContext(UserContext);
+  const { addFavItem, addCartItem, displayPrice } = useContext(UserContext);
   const [modifiedFavItem, setModifiedItem] = useState(false)
-
-  const displayPrice = (price) =>  `From $${price}`;
 
   const changeFavState = (item)=> {
     setModifiedItem(modifiedFavItem => !modifiedFavItem)
