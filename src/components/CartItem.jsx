@@ -47,8 +47,8 @@ export const CartItem = (props) => {
             sx={{display: "flex",justifyContent: "center", alignItems: "center" }}>
             <Typography variant="h5" color="text.secondary" sx={{display: "column", textAlign: "end", mx: 20 }}>
               <div className="text-end mx-3">{displayPrice(item.price)}</div>
-              <ItemButton buttonTitle="Remove from Cart" item={item} changeItemState={()=>removeCartItem({item})}/>
-              <ItemButton buttonTitle="Proceed Payment" item={item} changeItemState={()=>proceedPayItem({item})}/>
+              <ItemButton buttonTitle="Remove from Cart" item={item} changeItemState={() => removeCartItem({item})}/>
+              <ItemButton buttonTitle="Proceed Payment" item={item} changeItemState={() => proceedPayItem({item})}/>
             </Typography>
           </Grid>
         </Grid>
