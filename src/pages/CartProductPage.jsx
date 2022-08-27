@@ -22,7 +22,7 @@ export const CartProductPage = () => {
             <div>
               {cartList[key].map((value) => (
                 <div>
-                  <CartItem item={value} />
+                  <CartItem item={value} key={value.productName}/>
                 </div>
               ))}
             </div>
