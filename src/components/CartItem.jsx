@@ -16,7 +16,7 @@ const ItemButton = (props) => {
       <Box
         sx={{ display: "flex", justifyContent: "center", p: 1, mx: 1, bgcolor: "background.paper", borderRadius: 1 }}>
         <Typography variant="h6">
-          <Button　style={{ minWidth: "200px", minHeight: "30px" }}　variant="contained" onClick={() => changeItemState()}　>
+          <Button style={{ minWidth: "200px", minHeight: "30px" }} variant="contained" onClick={() => changeItemState()} >
             {props.buttonTitle}
           </Button>
         </Typography>
