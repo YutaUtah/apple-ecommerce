@@ -4,7 +4,9 @@ import React from "react";
 // Material UI
 import { Box, Typography } from "@mui/material";
 
-export const TotalBox = () => {
+export const TotalBox = (props) => {
+    console.log(props)
+    const { price } = props;
     return (
       <Box
         sx={{
@@ -17,7 +19,7 @@ export const TotalBox = () => {
         }}
       >
         <Typography variant="h6">Total</Typography>
-        <Typography variant="h6">$1000</Typography>
+        <Typography variant="h6">${price}</Typography>
       </Box>
     );
   };
