@@ -48,7 +48,7 @@ export const ProductInfo = () => {
             </Grid>
             <Grid item xs={4} >
               <Item>
-                <RightProductDetail />
+                <RightProductDetail item={product}/>
               </Item>
             </Grid>
           </Grid>
