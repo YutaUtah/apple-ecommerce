@@ -1,66 +1,16 @@
 // React
 import React, { useContext } from "react";
-import styled from "styled-components"
 
 // material UI
-import { Box, Button, Typography, MenuItem, FormControl, InputLabel, Select } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { UserContext } from "../../providers/ContextProvider";
 import { Link } from "react-router-dom";
 
-const PriceBox = () => {
-  return (
-    <Box sx={{ display: "flex", justifyContent: "space-between", p: 1, m: 1, bgcolor: "background.paper", borderRadius: 1 }}>
-      <Typography variant="h6">Price</Typography>
-      <Typography variant="h6">$1000</Typography>
-    </Box>
-  );
-};
+// components
+import { PriceBox } from "../boxes/PriceBox";
+import { QuantityBox } from "../boxes/QuantityBox";
+import { TotalBox } from "../boxes/TotalBox";
 
-const QuantityBox = () => {
-  const quantityList = [1,2,3,4,5];
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        p: 1,
-        m: 1,
-        bgcolor: "background.paper",
-        borderRadius: 1,
-        alignItems: "center",
-        defaultaValue: 0,
-      }}
-    >
-      <Typography variant="h6">Quantity</Typography>
-      <Typography variant="h6">
-        <FormControl sx={{ minWidth: 100 }} size="small">
-          <InputLabel id="quantity">quantity</InputLabel>
-          <Select labelId="quantity" id="quantity" label="quantity" >
-          {quantityList.map(num => ( <MenuItem value={num}>{num}</MenuItem> ))}
-          </Select>
-        </FormControl>
-      </Typography>
-    </Box>
-  );
-};
-
-const TotalBox = () => {
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        p: 1,
-        m: 1,
-        bgcolor: "background.paper",
-        borderRadius: 1,
-      }}
-    >
-      <Typography variant="h6">Total</Typography>
-      <Typography variant="h6">$1000</Typography>
-    </Box>
-  );
-};
 
 const ItemButton = (props) => {
   const { changeItemClick } = props;
