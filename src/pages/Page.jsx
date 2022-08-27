@@ -7,7 +7,7 @@ import { Header } from "../components/Header";
 import { CartProductPage } from "./CartProductPage";
 import { DefaultProductPage } from "./DefaultPage";
 import { FavoriteProductPage } from "./FavoriteProductPage";
-import { ProductInfo } from "./ProductInfo";
+import { ProductInfoPage } from "./ProductInfoPage";
 
 export const Page = () => {
   return (
@@ -15,7 +15,7 @@ export const Page = () => {
       <Header />
       <Routes>
         <Route path="/" element={<DefaultProductPage />} />
-        <Route path="products/:productName/" element={<ProductInfo/>} />
+        <Route path="products/:productName/" element={<ProductInfoPage/>} />
         <Route path="favorites/" element={<FavoriteProductPage/>} />
         <Route path="cart/" element={<CartProductPage/>} />
       </Routes>
