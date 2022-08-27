@@ -2,9 +2,8 @@
 import { useParams } from "react-router-dom";
 
 // Components
-import { Header } from "../components/Header.jsx";
-import { LeftProductDetail } from "../components/LeftProductDetail.jsx";
-import { RightProductDetail } from "../components/RightProductDetail.jsx";
+import { LeftProductDetails } from "../components/templates/LeftProductDetails";
+import { RightProductDetails } from "../components/templates/RightProductDetails";
 
 // material UI
 import { styled } from "@mui/material/styles";
@@ -21,6 +20,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export const ProductInfo = () => {
+
   const params = useParams();
   const { productList } = useContext(UserContext);
 
@@ -36,19 +36,18 @@ export const ProductInfo = () => {
 
   return (
     <div>
-      <Header />
       <Container>
         <Box sx={{ mt: 12 }}>
           <h1>Product Details</h1>
           <Grid sx={{ mt: 2 }} container spacing={2}>
             <Grid item xs={8} >
               <Item>
-                <LeftProductDetail product={product}/>
+                <LeftProductDetails product={product}/>
               </Item>
             </Grid>
             <Grid item xs={4} >
               <Item>
-                <RightProductDetail item={product}/>
+                <RightProductDetails item={product}/>
               </Item>
             </Grid>
           </Grid>
