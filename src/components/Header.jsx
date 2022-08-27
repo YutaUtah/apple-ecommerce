@@ -11,7 +11,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 export const Header = () => {
   return (
     <div>
-      <Box　sx={{ pb: 15 }}>
+      <Box sx={{ pb: 15 }}>
         <AppBar style={{ background: "#2E3B55" }}>
           <Toolbar>
             <Link to={'/'} >
