@@ -13,14 +13,12 @@ import { UserContext } from "../providers/ContextProvider";
 export const Item = (props) => {
   const { item } = props;
   const { addFavItem, addCartItem, displayPrice } = useContext(UserContext);
-  const [modifiedFavItem, setModifiedItem] = useState(false)
+  const [ modifiedFavItem, setModifiedItem ] = useState(false)
 
   const changeFavState = (item)=> {
     setModifiedItem(modifiedFavItem => !modifiedFavItem)
     addFavItem(item)
   }
-
-  const changeCartState = (item)=> addCartItem(item)
 
   return (
     <Card sx={{ maxWidth: 345, minWidth: 345, m: 2 }}>
@@ -39,7 +37,7 @@ export const Item = (props) => {
         <IconButton aria-label="add to favorites" style={modifiedFavItem ? {color:'red'} : {color: 'darkgray'}} onClick={() => changeFavState({item})} >
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share" onClick={() => changeCartState({item})} >
+        <IconButton aria-label="share" onClick={() => addCartItem({item})} >
           <AddCartIcon />
         </IconButton>
       </CardActions>
