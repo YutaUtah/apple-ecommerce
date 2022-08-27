@@ -11,7 +11,7 @@ import { UserContext } from "../providers/ContextProvider.jsx";
 export const OneCategory = (props) => {
     const { category } = props;
     const { productList } = useContext(UserContext);
-    
+
     return (
       <div>
         <Container>
