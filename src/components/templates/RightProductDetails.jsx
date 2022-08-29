@@ -2,49 +2,30 @@
 import React, { useContext } from "react";
 
 // material UI
-import { Box, Button, Typography } from "@mui/material";
-import { UserContext } from "../../providers/ContextProvider";
+// import { UserContext } from "../../providers/ContextProvider";
 import { Link } from "react-router-dom";
 
 // components
 import { PriceBox } from "../boxes/PriceBox";
 import { QuantityBox } from "../boxes/QuantityBox";
 import { TotalBox } from "../boxes/TotalBox";
-// import { useStyles } from "../buttons/PrimaryButton"
+import { PrimaryButton } from "../buttons/PrimaryButton";
+import { UserContext } from "../../providers/ContextProvider";
 
-
-const ItemButton = (props) => {
-//   const classes = useStyles();
-  const { changeItemClick } = props;
-  return (
-    <Box
-      sx={{ display: "flex", justifyContent: "end", p: 1, mx: 1, bgcolor: "background.paper", borderRadius: 1 }} >
-      <Typography variant="h6">
-        <Button
-          style={{ minWidth: "170px", minHeight: "30px" }}
-          variant="contained"
-          onClick={changeItemClick}
-        >
-          {props.buttonTitle}
-        </Button>
-      </Typography>
-    </Box>
-  );
-};
 
 export const RightProductDetails = (props) => {
   const { item } = props;
-  const { addFavItem, addCartItem } = useContext(UserContext);
+  const { addFavItem, addCartItem, styles } = useContext(UserContext);
 
   return (
     <div>
       <PriceBox price={item.price}/>
       <QuantityBox />
       <TotalBox price={item.price}/>
-      <ItemButton buttonTitle="Add Favorite" changeItemClick={() => addFavItem({item})}/>
-      <ItemButton buttonTitle="Add Cart" changeItemClick={() => addCartItem({item})}/>
+      <PrimaryButton buttonTitle="Add Favorite" changeItemClick={() => addFavItem({item})} buttonStyles={styles.buttonStyles} boxStyles={styles.productBoxStyles} />
+      <PrimaryButton buttonTitle="Add Cart" changeItemClick={() => addCartItem({item})} buttonStyles={styles.buttonStyles} boxStyles={styles.productBoxStyles} />
       <Link to={`/cart`} >
-        <ItemButton buttonTitle="Go To Cart Page" />
+        <PrimaryButton buttonTitle="Go To Cart Page" buttonStyles={styles.buttonStyles} boxStyles={styles.productBoxStyles} />
       </Link>
     </div>
   );
