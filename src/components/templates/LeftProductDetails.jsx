@@ -1,36 +1,23 @@
 // React
 import React from "react";
 
-// material UI
-import { styled } from "@mui/material/styles";
-import { Paper } from "@mui/material";
 
-const DescriptionItem = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: "center",
-}));
+export const LeftProductDetails = (props) => {
 
-const ProductItem = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  display: "flex",
-  justifyContent: "space-between",
-}));
+  const { product } = props;
 
-export const LeftProductDetails = ({product}) => {
   return (
     <div>
+      <div className="d-flex justify-content-center">
       <img src={"/" + product.image} height="300" width="350" />
-      <ProductItem>
+      </div>
+      <div className="d-flex p-2 justify-content-between">
         <h2>{product.productName}</h2>
         <h3>${product.price}</h3>
-      </ProductItem>
-      <DescriptionItem>
+      </div>
+      <div className="p-2">
         <p>{product.description}</p>
-      </DescriptionItem>
+      </div>
     </div>
   );
 };

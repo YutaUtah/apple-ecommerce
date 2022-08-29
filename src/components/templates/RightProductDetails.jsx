@@ -10,9 +10,11 @@ import { Link } from "react-router-dom";
 import { PriceBox } from "../boxes/PriceBox";
 import { QuantityBox } from "../boxes/QuantityBox";
 import { TotalBox } from "../boxes/TotalBox";
+// import { useStyles } from "../buttons/PrimaryButton"
 
 
 const ItemButton = (props) => {
+//   const classes = useStyles();
   const { changeItemClick } = props;
   return (
     <Box
@@ -36,9 +38,9 @@ export const RightProductDetails = (props) => {
 
   return (
     <div>
-      <PriceBox />
+      <PriceBox price={item.price}/>
       <QuantityBox />
-      <TotalBox />
+      <TotalBox price={item.price}/>
       <ItemButton buttonTitle="Add Favorite" changeItemClick={() => addFavItem({item})}/>
       <ItemButton buttonTitle="Add Cart" changeItemClick={() => addCartItem({item})}/>
       <Link to={`/cart`} >
