@@ -2,33 +2,16 @@
 import React, { useContext } from "react";
 
 // material UI
-import { Box, Button, Card, CardMedia, Grid, Typography } from "@mui/material";
+import { Box, Card, CardMedia, Grid, Typography } from "@mui/material";
 
 // Components
 import { UserContext } from "../providers/ContextProvider";
-
-
-const ItemButton = (props) => {
-
-  const { changeItemState } = props;
-
-    return (
-      <Box
-        sx={{ display: "flex", justifyContent: "center", p: 1, mx: 1, bgcolor: "background.paper", borderRadius: 1 }}>
-        <Typography variant="h6">
-          <Button style={{ minWidth: "200px", minHeight: "30px" }} variant="contained" onClick={() => changeItemState()} >
-            {props.buttonTitle}
-          </Button>
-        </Typography>
-      </Box>
-    );
-  };
-
+import { PrimaryButton } from "./buttons/PrimaryButton";
 
 export const CartItem = (props) => {
 
   const { item } = props;
-  const { removeCartItem, proceedPayItem, displayPrice } = useContext(UserContext);
+  const { removeCartItem, proceedPayItem, displayPrice, styles } = useContext(UserContext);
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }} key={item.productName} >
@@ -47,8 +30,8 @@ export const CartItem = (props) => {
             sx={{display: "flex",justifyContent: "center", alignItems: "center" }}>
             <Typography variant="h5" color="text.secondary" sx={{display: "column", textAlign: "end", mx: 20 }}>
               <div className="text-end mx-3">{displayPrice(item.price)}</div>
-              <ItemButton buttonTitle="Remove from Cart" item={item} changeItemState={() => removeCartItem({item})}/>
-              <ItemButton buttonTitle="Proceed Payment" item={item} changeItemState={() => proceedPayItem({item})}/>
+              <PrimaryButton buttonTitle="Remove from Cart" changeItemState={() => removeCartItem({item})} boxStyles={styles.productBoxStyles} buttonStyles={styles.buttonStyles}/>
+              <PrimaryButton buttonTitle="Proceed Item" changeItemState={() => proceedPayItem({item})} boxStyles={styles.productBoxStyles} buttonStyles={styles.buttonStyles}/>
             </Typography>
           </Grid>
         </Grid>

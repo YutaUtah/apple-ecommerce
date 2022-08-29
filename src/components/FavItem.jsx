@@ -2,39 +2,16 @@
 import React, { useContext } from "react";
 
 // material UI
-import { Box, Button, Card, CardMedia, Grid, Typography } from "@mui/material";
+import { Box, Card, CardMedia, Grid, Typography } from "@mui/material";
 
 // Components
 import { UserContext } from "../providers/ContextProvider";
-
-
-const ItemButton = (props) => {
-
-  const { changeItemState } = props;
-
-    return (
-      <Box
-        sx={{ display: "flex",
-              justifyContent: "center",
-              p: 1,
-              mx: 1,
-              bgcolor: "background.paper",
-              borderRadius: 1,
-            }}>
-        <Typography variant="h6">
-          <Button style={{ minWidth: "200px", minHeight: "30px" }} variant="contained" onClick={() => changeItemState()} >
-            {props.buttonTitle}
-          </Button>
-        </Typography>
-      </Box>
-    );
-  };
-
+import { PrimaryButton } from "./buttons/PrimaryButton";
 
 export const FavItem = (props) => {
 
   const { item } = props;
-  const { removeFavItem, addCartItem, displayPrice } = useContext(UserContext);
+  const { removeFavItem, addCartItem, displayPrice, styles } = useContext(UserContext);
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }} key={item.productName} >
@@ -53,8 +30,8 @@ export const FavItem = (props) => {
             sx={{display: "flex",justifyContent: "center", alignItems: "center" }}>
             <Typography variant="h5" color="text.secondary" sx={{display: "column", textAlign: "end", mx: 20 }}>
               <div className="text-end mx-3">{displayPrice(item.price)}</div>
-              <ItemButton buttonTitle="Remove Favorite" item={item} changeItemState={() => removeFavItem({item})}/>
-              <ItemButton buttonTitle="Add to Cart" item={item} changeItemState={() => addCartItem({item})}/>
+              <PrimaryButton buttonTitle="Remove Favorite"  changeItemState={() => removeFavItem({item})} boxStyles={{ display: "flex", justifyContent: "center", p: 1, mx: 1, bgcolor: "background.paper", borderRadius: 1}} buttonStyles={styles.buttonStyles}/>
+              <PrimaryButton buttonTitle="Add to Cart"  changeItemState={() => addCartItem({item})} boxStyles={{ display: "flex", justifyContent: "center", p: 1, mx: 1, bgcolor: "background.paper", borderRadius: 1}} buttonStyles={styles.buttonStyles}/>
             </Typography>
           </Grid>
         </Grid>
