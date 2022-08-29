@@ -3,10 +3,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // material UI
-import { Box, AppBar, Toolbar, IconButton, Typography } from "@mui/material";
-import AppleIcon from "@mui/icons-material/Apple";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Box, AppBar, Toolbar, Typography } from "@mui/material";
+
+import { FavIconButton } from "./buttons/icons/FavIcon";
+import { CartIconButton } from "./buttons/icons/CartIcon";
+import { AppleIconButton } from "./buttons/icons/AppleIcon";
 
 export const Header = () => {
   return (
@@ -15,21 +16,15 @@ export const Header = () => {
         <AppBar style={{ background: "#2E3B55" }}>
           <Toolbar>
             <Link to={'/'} >
-              <IconButton size="large" style={{ color: 'white' }} sx={{ mr: 2 }} to="/" >
-                <AppleIcon />
-              </IconButton>
+              <AppleIconButton/>
             </Link>
             <Typography variant="h6">Apple E-Commerce</Typography>
             <Box sx={{ flexGrow: 1 }} />
             <Link to={`/favorites`} >
-              <IconButton size="large" style={{ color: 'white' }} >
-                <FavoriteIcon />
-              </IconButton>
+              <FavIconButton/>
             </Link>
             <Link to={`/cart`} >
-              <IconButton size="large" style={{ color: 'white' }} >
-                <ShoppingCartIcon />
-              </IconButton>
+              <CartIconButton/>
             </Link>
           </Toolbar>
         </AppBar>
