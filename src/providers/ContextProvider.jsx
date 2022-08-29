@@ -1,5 +1,6 @@
 // React
 import React, { createContext, useState } from "react";
+import { RightProductDetails } from "../components/templates/RightProductDetails";
 
 // global config
 import productList from "../data/productList";
@@ -64,11 +65,15 @@ const ContextProvider = (props) => {
       }
 
     const proceedPayItem = ({item}) => {
-        console.log(item)
         alert(`Paid ${item.price} USD for ${item.productName}, thank you!`)
     }
+
+    const styles = {
+        buttonStyles: {minWidth: "200px", minHeight: "30px" },
+        productBoxStyles: {display: "flex", justifyContent: "end", p: 1, mx: 1, bgcolor: "background.paper", borderRadius: 1}
+    }
     return (
-        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, removeCartItem, productList, proceedPayItem, displayPrice }}>
+        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, removeCartItem, productList, proceedPayItem, displayPrice, styles }}>
           {children}
         </UserContext.Provider>
     )
