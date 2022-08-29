@@ -13,9 +13,7 @@ export const CartProductPage = () => {
   return (
     <div>
       <Container>
-        <Typography sx={{ textAlign: "start", mb: 5}} variant="h4">
-          Cart List
-        </Typography>
+        <h1>Cart List</h1>
         {Object.keys(cartList).map((key) => {
           return (
             <div>

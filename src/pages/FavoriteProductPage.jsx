@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 // components
 import { UserContext } from "../providers/ContextProvider";
 import { FavItem } from "../components/FavItem";
-import { Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 
 export const FavoriteProductPage = () => {
   const { favList } = useContext(UserContext);
@@ -12,9 +12,7 @@ export const FavoriteProductPage = () => {
   return (
     <div>
       <Container>
-        <Typography sx={{ textAlign: "start", mb: 5}} variant="h4">
-          Favorite List
-        </Typography>
+        <h1>Favorite List</h1>
         {Object.keys(favList).map((key) => {
           return (
             <div>
