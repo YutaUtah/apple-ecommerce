@@ -15,6 +15,8 @@ const ContextProvider = (props) => {
     const [favList, setFavList] = useState({});
     const [cartList, setCartList] = useState({});
 
+    // const [productList, setProductList] = useState(productList);
+
     const displayPrice = (price) =>  `From $${price}`;
 
     const addItemBase = (item, listByPurpose) => {
@@ -70,7 +72,9 @@ const ContextProvider = (props) => {
     const sortHandleChange = (event) => {
         switch (event.target.value) {
             case "ascending":
-                console.log('ascending hits')
+                Object.entries(productList).map(([key, value]) => (value.sort((a, b) => (a.price > b.price) ? 1 : -1)))
+                console.log(productList)
+                // setProductList(productList)
                 break;
             case "descending":
                 console.log('descending hits')
@@ -81,7 +85,6 @@ const ContextProvider = (props) => {
     }
 
     const filterHandleChange = (event) => {
-        console.log(event.target.value)
         switch (event.target.value) {
             case "moreThanOneThousand":
                 console.log('$1000 hits')
