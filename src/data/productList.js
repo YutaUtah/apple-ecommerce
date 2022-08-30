@@ -1,4 +1,4 @@
-const productList = {
+export const globalProductList = {
   'Mac': [
     {
       category : 'Mac',
@@ -231,4 +231,3 @@ const productList = {
 }
 
 
-export default productList;
