@@ -2,7 +2,8 @@ import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React from "react";
 
 export const Dropdown = (props) => {
-    const { name } = props;
+    const { name, dropdownObject, handleChange} = props;
+
     return (
         <div>
             <FormControl fullWidth>
@@ -11,12 +12,10 @@ export const Dropdown = (props) => {
               sx={{minWidth: "100px", mx: 1}}
               labelId="dropdown-label"
               id="dropdown-select"
-              // value={age}
               label="Age"
-              // onChange={handleChange}
+              onChange={(event) => {handleChange(event)}}
             >
-              <MenuItem value={10}>Ascending</MenuItem>
-              <MenuItem value={20}>Descending</MenuItem>
+              { Object.entries(dropdownObject).map(([key,value]) => <MenuItem value={key}>{value}</MenuItem>) } 
             </Select>
           </FormControl>
           </div>
