@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 // components
 import { UserContext } from "../providers/ContextProvider";
 import { CartItem } from "../components/CartItem";
-import { Container, Typography } from "@mui/material";
+import { Box, Card, Container, Typography } from "@mui/material";
 
 export const CartProductPage = () => {
 
@@ -12,8 +12,9 @@ export const CartProductPage = () => {
 
   return (
     <div>
-      <Container>
+      <Container >
         <h1>Cart List</h1>
+        <Box sx={{display: "flex"}}>
         {Object.keys(cartList).map((key) => {
           return (
             <div>
@@ -25,6 +26,8 @@ export const CartProductPage = () => {
             </div>
           );
         })}
+        <Card sx={{ minWidth: "220px", maxHeight: "400px" , display: "flex", border: "solid" }}>ee</Card>
+        </Box>
       </Container>
     </div>
   );
