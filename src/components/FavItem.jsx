@@ -30,8 +30,8 @@ export const FavItem = (props) => {
             sx={{display: "flex",justifyContent: "center", alignItems: "center" }}>
             <Typography variant="h5" color="text.secondary" sx={{display: "column", textAlign: "end", mx: 20 }}>
               <div className="text-end mx-3">{displayPrice(item.price)}</div>
-              <PrimaryButton buttonTitle="Remove Favorite"  changeItemState={() => removeFavItem({item})} boxStyles={{ display: "flex", justifyContent: "center", p: 1, mx: 1, bgcolor: "background.paper", borderRadius: 1}} buttonStyles={styles.buttonStyles}/>
-              <PrimaryButton buttonTitle="Add to Cart"  changeItemState={() => addCartItem({item})} boxStyles={{ display: "flex", justifyContent: "center", p: 1, mx: 1, bgcolor: "background.paper", borderRadius: 1}} buttonStyles={styles.buttonStyles}/>
+              <PrimaryButton buttonTitle="Remove Favorite"  changeItemState={() => removeFavItem({item})} boxStyles={styles.favButtonStyles} buttonStyles={styles.buttonStyles}/>
+              <PrimaryButton buttonTitle="Add to Cart"  changeItemState={() => addCartItem({item})} boxStyles={styles.favButtonStyles} buttonStyles={styles.buttonStyles}/>
             </Typography>
           </Grid>
         </Grid>
