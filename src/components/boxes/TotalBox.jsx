@@ -5,8 +5,9 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 
 export const TotalBox = (props) => {
-    console.log(props)
+
     const { price } = props;
+
     return (
       <Box
         sx={{
