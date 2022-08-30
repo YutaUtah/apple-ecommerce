@@ -2,9 +2,9 @@
 import React, { createContext, useState } from "react";
 
 // global config
-import productList from "../data/productList";
+import { globalProductList } from "../data/productList";
 
-export const UserContext = createContext({});
+export const UserContext = createContext();
 
 const ContextProvider = (props) => {
     const { children } = props;
@@ -15,7 +15,7 @@ const ContextProvider = (props) => {
     const [favList, setFavList] = useState({});
     const [cartList, setCartList] = useState({});
 
-    // const [productList, setProductList] = useState(productList);
+    const [productList, setProductList] = useState(globalProductList);
 
     const displayPrice = (price) =>  `From $${price}`;
 
@@ -72,9 +72,10 @@ const ContextProvider = (props) => {
     const sortHandleChange = (event) => {
         switch (event.target.value) {
             case "ascending":
+                // dropdown and default page and event, k
                 Object.entries(productList).map(([key, value]) => (value.sort((a, b) => (a.price > b.price) ? 1 : -1)))
                 console.log(productList)
-                // setProductList(productList)
+                setProductList(productList)
                 break;
             case "descending":
                 console.log('descending hits')
@@ -101,7 +102,7 @@ const ContextProvider = (props) => {
     }
 
     return (
-        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, removeCartItem, productList, proceedPayItem, displayPrice, sortHandleChange, filterHandleChange, styles }}>
+        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, removeCartItem, productList, setProductList, proceedPayItem, displayPrice, sortHandleChange, filterHandleChange, styles }}>
           {children}
         </UserContext.Provider>
     )
