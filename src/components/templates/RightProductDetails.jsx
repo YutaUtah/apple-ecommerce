@@ -2,7 +2,6 @@
 import React, { useContext } from "react";
 
 // material UI
-// import { UserContext } from "../../providers/ContextProvider";
 import { Link } from "react-router-dom";
 
 // components
