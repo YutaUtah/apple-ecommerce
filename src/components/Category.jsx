@@ -15,7 +15,7 @@ export const Category = (props) => {
     return (
       <div>
         <Container>
-          <Box sx={{ pb: 12 }}>
+          <Box sx={{ pb: 5 }}>
             <Typography sx={{ mx: 2, textAlign: "start" }} variant="h4">
               {category}
             </Typography>
