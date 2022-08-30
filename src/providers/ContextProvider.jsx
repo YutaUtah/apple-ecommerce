@@ -1,6 +1,5 @@
 // React
 import React, { createContext, useState } from "react";
-import { RightProductDetails } from "../components/templates/RightProductDetails";
 
 // global config
 import productList from "../data/productList";
@@ -68,12 +67,38 @@ const ContextProvider = (props) => {
         alert(`Paid ${item.price} USD for ${item.productName}, thank you!`)
     }
 
+    const sortHandleChange = (event) => {
+        switch (event.target.value) {
+            case "ascending":
+                console.log('ascending hits')
+                break;
+            case "descending":
+                console.log('descending hits')
+                break;
+            default:
+                console.log('neither')
+        }
+    }
+
+    const filterHandleChange = (event) => {
+        console.log(event.target.value)
+        switch (event.target.value) {
+            case "moreThanOneThousand":
+                console.log('$1000 hits')
+                break;
+            default:
+                console.log('neither')
+        }
+    }
+
     const styles = {
         buttonStyles: {minWidth: "200px", minHeight: "30px" },
-        productBoxStyles: {display: "flex", justifyContent: "end", p: 1, mx: 1, bgcolor: "background.paper", borderRadius: 1}
+        productBoxStyles: {display: "flex", justifyContent: "end", p: 1, mx: 1, bgcolor: "background.paper", borderRadius: 1},
+        favButtonStyles: { display: "flex", justifyContent: "center", p: 1, mx: 1, bgcolor: "background.paper", borderRadius: 1},
     }
+
     return (
-        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, removeCartItem, productList, proceedPayItem, displayPrice, styles }}>
+        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, removeCartItem, productList, proceedPayItem, displayPrice, sortHandleChange, filterHandleChange, styles }}>
           {children}
         </UserContext.Provider>
     )
