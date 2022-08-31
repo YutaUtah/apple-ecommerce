@@ -12,7 +12,7 @@ export const DefaultProductPage = () => {
     <div>
       <Container>
         <div className="d-flex justify-content-end">
-          <Dropdown name="Sort"   dropdownObject={{'ascending': 'Ascending', 'descending': 'Descending'}} handleChange={sortHandleChange}/>
+          <Dropdown name="Sort"   dropdownObject={{'ascending': 'Ascending', 'descending': 'Descending'}} handleChange={(event)=>{sortHandleChange(event, productList)}}/>
           <Dropdown name="Filter" dropdownObject={{'moreThanOneThousand': '$1000~'}} handleChange={filterHandleChange}/>
         </div>
         {Object.keys(productList).map((key) => (
