@@ -16,7 +16,7 @@ export const CartItem = (props) => {
   return (
     <Box sx={{ display: "flex" }} key={item.productName} >
       <Card
-        sx={{ maxWidth: "85%", minHeight: 250, minWidth: 900, mb: 1, display: "flex", alignItems: "center", justifyContent: "space-between", border: "solid" }}>
+        sx={{ maxWidth: "95%", minHeight: 250, minWidth: 900, mb: 1.5, display: "flex", alignItems: "center", justifyContent: "space-between", border: "solid" }}>
         <Grid container spacing={2}>
           <Grid item xs={6} md={4}>
             <CardMedia component="img" height="300" width="200" image={item.image} alt={item.productName} sx={{m:2}}/>
@@ -31,7 +31,6 @@ export const CartItem = (props) => {
             <Typography variant="h5" color="text.secondary" sx={{display: "column", textAlign: "end"}}>
               <div className="text-end mx-3">{displayPrice(item.price)}</div>
               <PrimaryButton buttonTitle="Remove from Cart" changeItemState={() => removeCartItem({item})} boxStyles={styles.productBoxStyles} buttonStyles={styles.buttonStyles}/>
-              <PrimaryButton buttonTitle="Proceed Item" changeItemState={() => proceedPayItem({item})} boxStyles={styles.productBoxStyles} buttonStyles={styles.buttonStyles}/>
             </Typography>
           </Grid>
         </Grid>
