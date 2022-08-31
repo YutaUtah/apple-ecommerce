@@ -16,7 +16,7 @@ const ContextProvider = (props) => {
     const [cartList, setCartList] = useState({});
 
     const [productList, setProductList] = useState(globalProductList);
-
+    const [productItem, setProductItem] = useState({})
     const displayPrice = (price) =>  `From $${price}`;
 
     const addItemBase = (item, listByPurpose) => {
@@ -45,7 +45,7 @@ const ContextProvider = (props) => {
 
     const removeFavItem = ({item}) => {
         removeItemBase(item, favList);
-        setFavItem(item)
+        setFavItem(item);
         setFavList(favList);
     }
 
@@ -69,20 +69,19 @@ const ContextProvider = (props) => {
         alert(`Paid ${item.price} USD for ${item.productName}, thank you!`)
     }
 
-    const sortHandleChange = (event) => {
+    const sortHandleChange = (event, item) => {
         switch (event.target.value) {
             case "ascending":
-                // dropdown and default page and event, k
                 Object.entries(productList).map(([key, value]) => (value.sort((a, b) => (a.price > b.price) ? 1 : -1)))
-                console.log(productList)
-                setProductList(productList)
                 break;
             case "descending":
-                console.log('descending hits')
+                Object.entries(productList).map(([key, value]) => (value.sort((a, b) => (a.price < b.price) ? 1 : -1)))
                 break;
             default:
-                console.log('neither')
+                break;
         }
+        setProductItem(item)
+        setProductList(productList)
     }
 
     const filterHandleChange = (event) => {
