@@ -17,7 +17,8 @@ const ContextProvider = (props) => {
 
     const [productList, setProductList] = useState(globalProductList);
     const [productItem, setProductItem] = useState({})
-    const displayPrice = (price) =>  `From $${price}`;
+
+    const displayPrice = (price) =>  `$${price}`;
 
     const addItemBase = (item, listByPurpose) => {
         const category = item.category
@@ -26,9 +27,7 @@ const ContextProvider = (props) => {
         } else if (listByPurpose[category].includes(item)) {
             const index = listByPurpose[category].indexOf(item)
             listByPurpose[category].splice(index, 1)
-            if (listByPurpose[category].length === 0) {
-                delete listByPurpose[category];
-            }
+            if (listByPurpose[category].length === 0) delete listByPurpose[category];
         } else {
             listByPurpose[category].push(item)
         }
@@ -38,9 +37,7 @@ const ContextProvider = (props) => {
         const category = item.category
         const index = listByPurpose[category].indexOf(item)
         listByPurpose[category].splice(index, 1)
-        if (listByPurpose[category].length === 0) {
-            delete listByPurpose[category];
-        }
+        if (listByPurpose[category].length === 0) delete listByPurpose[category];
     }
 
     const removeFavItem = ({item}) => {
@@ -58,12 +55,12 @@ const ContextProvider = (props) => {
     const addFavItem = ({item}) => {
         addItemBase(item, favList)
         setFavList(favList)
-      }
+    }
 
     const addCartItem = ({item}) => {
         addItemBase(item, cartList)
         setCartList(cartList)
-      }
+    }
 
     const proceedPayItem = ({item}) => {
         alert(`Paid ${item.price} USD for ${item.productName}, thank you!`)
@@ -81,6 +78,7 @@ const ContextProvider = (props) => {
                 break;
         }
         setProductItem(item)
+        // only setProductList(item) works as well
         setProductList(productList)
     }
 
@@ -96,8 +94,8 @@ const ContextProvider = (props) => {
 
     const styles = {
         buttonStyles: {minWidth: "200px", minHeight: "30px" },
-        productBoxStyles: {display: "flex", justifyContent: "end", p: 1, mx: 1, bgcolor: "background.paper", borderRadius: 1},
-        favButtonStyles: { display: "flex", justifyContent: "center", p: 1, mx: 1, bgcolor: "background.paper", borderRadius: 1},
+        productBoxStyles: { display: "flex", justifyContent: "end", py:1, bgcolor: "background.paper", borderRadius: 1 },
+        favButtonStyles:  { display: "flex", justifyContent: "center", p: 1, bgcolor: "background.paper", borderRadius: 1 },
     }
 
     return (
