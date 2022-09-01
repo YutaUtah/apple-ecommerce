@@ -9,11 +9,14 @@ import { UserContext } from "../providers/ContextProvider";
 import { CartItem } from "../components/CartItem";
 import { Box, Card, Container, Typography } from "@mui/material";
 import { PrimaryButton } from "../components/buttons/PrimaryButton";
+import { PriceBox } from "../components/boxes/PriceBox";
+import { TotalBox } from "../components/boxes/TotalBox";
 
 
 export const CartProductPage = () => {
 
-  const { cartList, styles } = useContext(UserContext);
+  const { cartList, proceedPayItem, totalPriceCalculator, styles } = useContext(UserContext);
+
 
   return (
     <div>
@@ -26,17 +29,11 @@ export const CartProductPage = () => {
           <>
             <CartItemList cartList={cartList}/>
             <Card sx={{ minWidth: "400px", maxHeight: "340px" , border: "solid"}}>
-              <Typography variant="h5" color="text.secondary" sx={{ display: "column",  m: 3 }}>
-                <div className="d-flex justify-content-between">
-                  <div>Quantity</div>
-                  <div>Quantity</div>
-                </div>
-                <div className="d-flex justify-content-between">
-                  <div>Quantity</div>
-                  <div>Quantity</div>
-                </div>
-                <div>
-                <PrimaryButton buttonTitle="Proceed Item" boxStyles={styles.productBoxStyles} buttonStyles={styles.buttonStyles}/>
+              <Typography variant="h5" color="text.secondary" sx={{ display: "column",  m: 2 }}>
+                  <PriceBox price={"11111"}/>
+                  <TotalBox price={totalPriceCalculator(cartList)}/>
+                <div className="mx-3">
+                  <PrimaryButton buttonTitle="Proceed Item" changeItemState={proceedPayItem} boxStyles={styles.productBoxStyles} buttonStyles={styles.buttonStyles}/>
                 </div>
               </Typography>
             </Card>
