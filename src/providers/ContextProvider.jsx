@@ -63,7 +63,8 @@ const ContextProvider = (props) => {
     }
 
     const proceedPayItem = ({item}) => {
-        alert(`Paid ${item.price} USD for ${item.productName}, thank you!`)
+        // alert(`Paid ${item.price} USD for ${item.productName}, thank you!`)
+        alert("proceeded item!")
     }
 
     const sortHandleChange = (event, item) => {
@@ -92,14 +93,41 @@ const ContextProvider = (props) => {
         }
     }
 
+    const totalPriceCalculator = (cartList) => {
+        let totalPrice = 0
+        Object.keys(cartList).map((key) => {
+          cartList[key].map((item)=> {
+            totalPrice += item.price
+          })
+        })
+        return totalPrice
+      }
+
     const styles = {
         buttonStyles: {minWidth: "200px", minHeight: "30px" },
         productBoxStyles: { display: "flex", justifyContent: "end", py:1, bgcolor: "background.paper", borderRadius: 1 },
         favButtonStyles:  { display: "flex", justifyContent: "center", p: 1, bgcolor: "background.paper", borderRadius: 1 },
     }
 
+    const value = {
+        favList,
+        addFavItem,
+        removeFavItem,
+        cartList,
+        addCartItem,
+        removeCartItem,
+        productList,
+        setProductList,
+        proceedPayItem,
+        displayPrice,
+        sortHandleChange,
+        filterHandleChange,
+        totalPriceCalculator,
+        styles,
+    }
+
     return (
-        <UserContext.Provider value={{ favList, addFavItem, removeFavItem, cartList, addCartItem, removeCartItem, productList, setProductList, proceedPayItem, displayPrice, sortHandleChange, filterHandleChange, styles }}>
+        <UserContext.Provider value={value}>
           {children}
         </UserContext.Provider>
     )
