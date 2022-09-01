@@ -5,21 +5,17 @@ import React from "react";
 import { Box, FormControl, InputLabel, MenuItem, Select, Typography } from "@mui/material";
 
 export const QuantityBox = () => {
+
     const quantityList = [1,2,3,4,5];
+
     return (
       <Box
         sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          p: 1,
-          m: 1,
-          bgcolor: "background.paper",
+          py: 1,
           borderRadius: 1,
-          alignItems: "center",
-          defaultaValue: 0,
+          defaultaValue: 1,
         }}
       >
-        <Typography variant="h6">Quantity</Typography>
         <Typography variant="h6">
           <FormControl sx={{ minWidth: 100 }} size="small">
             <InputLabel id="quantity">quantity</InputLabel>
