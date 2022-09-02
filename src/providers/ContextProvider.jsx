@@ -93,6 +93,10 @@ const ContextProvider = (props) => {
         }
     }
 
+    const changeQuantity = (event) => {
+        console.log(event.target. value)
+    }
+    // if quantity is less than or equal to 0, you break
     const totalPriceCalculator = (cartList) => {
         let totalPrice = 0
         Object.keys(cartList).map((key) => {
@@ -122,6 +126,7 @@ const ContextProvider = (props) => {
         displayPrice,
         sortHandleChange,
         filterHandleChange,
+        changeQuantity,
         totalPriceCalculator,
         styles,
     }
