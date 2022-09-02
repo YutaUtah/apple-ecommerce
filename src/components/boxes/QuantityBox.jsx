@@ -4,9 +4,10 @@ import React from "react";
 // Material UI
 import { Box, FormControl, InputLabel, MenuItem, Select, Typography } from "@mui/material";
 
-export const QuantityBox = () => {
+export const QuantityBox = (props) => {
 
     const quantityList = [1,2,3,4,5];
+    const { changeQuantity } = props;
 
     return (
       <Box
@@ -19,7 +20,7 @@ export const QuantityBox = () => {
         <Typography variant="h6">
           <FormControl sx={{ minWidth: 100 }} size="small">
             <InputLabel id="quantity">quantity</InputLabel>
-            <Select labelId="quantity" id="quantity" label="quantity" >
+            <Select labelId="quantity" id="quantity" label="quantity" onChange={(event)=>changeQuantity(event)} >
             {quantityList.map(num => ( <MenuItem value={num}>{num}</MenuItem> ))}
             </Select>
           </FormControl>
