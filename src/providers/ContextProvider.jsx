@@ -36,19 +36,31 @@ const ContextProvider = (props) => {
     const removeItemBase = (item, listByPurpose) => {
         const category = item.category
         const index = listByPurpose[category].indexOf(item)
-        listByPurpose[category].splice(index, 1)
-        if (listByPurpose[category].length === 0) delete listByPurpose[category];
+
+        if (listByPurpose[category].length === 1) {
+            delete listByPurpose[category]
+        }
+        else { listByPurpose[category].splice(index, 1)}
+
     }
 
     const removeFavItem = ({item}) => {
         removeItemBase(item, favList);
-        setFavItem(item);
+        if (Object.entries(favList).length === 0) {
+            setFavItem({})
+        } else {
+            setFavItem(item);
+        }
         setFavList(favList);
     }
 
     const removeCartItem = ({item}) => {
         removeItemBase(item, cartList);
-        setCartItem(item)
+        if (Object.entries(cartList).length === 0) {
+            setCartItem({})
+        } else {
+            setCartItem(item);
+        }
         setCartList(cartList);
     }
 
@@ -62,9 +74,10 @@ const ContextProvider = (props) => {
         setCartList(cartList)
     }
 
-    const proceedPayItem = ({item}) => {
-        // alert(`Paid ${item.price} USD for ${item.productName}, thank you!`)
-        alert("proceeded item!")
+    const proceedPayItem = (cartList) => {
+        const totalPrice = totalPriceCalculator(cartList)
+        alert(`Paid ${totalPrice} USD`)
+        // alert("proceeded item!")
     }
 
     const sortHandleChange = (event, item) => {
@@ -79,8 +92,6 @@ const ContextProvider = (props) => {
                 break;
         }
         setProductItem(item)
-        // only setProductList(item) works as well
-        setProductList(productList)
     }
 
     const filterHandleChange = (event) => {
@@ -93,16 +104,26 @@ const ContextProvider = (props) => {
         }
     }
 
-    const changeQuantity = (event) => {
-        console.log(event.target. value)
+    const changeQuantity = (event, cartItem) => {
+        Object.keys(cartList).map((key) => {
+            cartList[key].map((item, index)=> {
+              if ( item.productName === cartItem.productName ) {
+                cartList[key][index].quantity = event.target.value;
+              }
+            })
+          })
+          setCartItem(cartItem);
     }
+
     // if quantity is less than or equal to 0, you break
     const totalPriceCalculator = (cartList) => {
         let totalPrice = 0
         Object.keys(cartList).map((key) => {
           cartList[key].map((item)=> {
-            totalPrice += item.price
-          })
+            totalPrice += item.price * item.quantity;
+            // ANY state change you need to update the state to re-render the targeted state
+            setCartItem(item);
+        })
         })
         return totalPrice
       }
