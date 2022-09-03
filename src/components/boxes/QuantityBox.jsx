@@ -20,8 +20,8 @@ export const QuantityBox = (props) => {
         <Typography variant="h6">
           <FormControl sx={{ minWidth: 100 }} size="small">
             <InputLabel id="quantity">quantity</InputLabel>
-            <Select labelId="quantity" id="quantity" label="quantity" onChange={(event)=>changeQuantity(event)} >
-            {quantityList.map(num => ( <MenuItem value={num}>{num}</MenuItem> ))}
+            <Select labelId="quantity" id="quantity" label="quantity" onChange={changeQuantity} >
+            {quantityList.map(num => ( <MenuItem value={num} key={num}>{num}</MenuItem> ))}
             </Select>
           </FormControl>
         </Typography>
