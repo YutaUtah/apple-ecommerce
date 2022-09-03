@@ -30,7 +30,7 @@ export const CartItem = (props) => {
           <Grid item xs={6} md={2.5} sx={{display: "flex", justifyContent: "center", alignItems: "center" }}>
             <Typography variant="h5" color="text.secondary" sx={{display: "column", textAlign: "end"}}>
                   {displayPrice(item.price)}
-                  <QuantityBox changeQuantity={(event)=>changeQuantity(event)}/>
+                  <QuantityBox changeQuantity={(event)=>changeQuantity(event, item)}/>
                   <PrimaryButton buttonTitle="Remove from Cart" changeItemState={() => removeCartItem({item})} boxStyles={styles.productBoxStyles} buttonStyles={styles.buttonStyles}/>
             </Typography>
           </Grid>
