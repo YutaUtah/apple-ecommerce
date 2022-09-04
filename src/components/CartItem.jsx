@@ -14,7 +14,7 @@ export const CartItem = (props) => {
   const { item, changeQuantity } = props;
   const { removeCartItem, displayPrice, styles } = useContext(UserContext);
 
-  const imageURL = "/" + item.image;
+  const imageURL = item.image;
 
   return (
     <Box sx={{ display: "flex" }} key={item.productName} >

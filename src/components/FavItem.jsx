@@ -12,7 +12,7 @@ export const FavItem = (props) => {
 
   const { item } = props;
   const { removeFavItem, addCartItem, displayPrice, styles } = useContext(UserContext);
-  const imageURL = "/" + item.image;
+  const imageURL = item.image;
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }} key={item.productName} >
