@@ -15,15 +15,15 @@ export const Header = () => {
       <Box sx={{ pb: 15 }}>
         <AppBar style={{ background: "#2E3B55" }}>
           <Toolbar>
-            <Link to={'/'} >
+            <Link to={'apple-ecommerce'} >
               <AppleIconButton/>
             </Link>
             <Typography variant="h6">Apple E-Commerce</Typography>
             <Box sx={{ flexGrow: 1 }} />
-            <Link to={`/favorites`} >
+            <Link to={`/apple-ecommerce/favorites`} >
               <FavIconButton/>
             </Link>
-            <Link to={`/cart`} >
+            <Link to={`/apple-ecommerce/cart`} >
               <CartIconButton/>
             </Link>
           </Toolbar>

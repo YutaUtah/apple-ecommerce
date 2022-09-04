@@ -12,6 +12,7 @@ export const FavItem = (props) => {
 
   const { item } = props;
   const { removeFavItem, addCartItem, displayPrice, styles } = useContext(UserContext);
+  const imageURL = "/" + item.image;
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }} key={item.productName} >
@@ -19,7 +20,7 @@ export const FavItem = (props) => {
         sx={{ minHeight: 250, minWidth: 800, mb: 1, display: "flex", alignItems: "center", justifyContent: "space-between", border: "solid" }}>
         <Grid container spacing={2}>
           <Grid item xs={6} md={4}>
-            <CardMedia component="img" height="300" width="200" image={item.image} alt={item.productName} sx={{m:2}}/>
+            <CardMedia component="img" height="300" width="200" image={imageURL} alt={item.productName} sx={{m:2}}/>
           </Grid>
           <Grid item xs={6} md={5} sx={{ display: "flex", justifyContent: "center", alignItems: "center", minWidth: "370px"}} >
             <Typography gutterBottom variant="h4" component="div">
