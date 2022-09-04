@@ -23,7 +23,7 @@ export const Item = (props) => {
   return (
     <Card sx={{ maxWidth: 345, minWidth: 345, m: 2 }}>
       <Link to={`/apple-ecommerce/products/${item.linkName}`}>
-        <CardMedia component="img" height="300" width="500" image={item.image} alt="Product Image"/>
+        <CardMedia component="img" height="300" width="500" image={"../" + item.image} alt="Product Image"/>
       </Link>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
