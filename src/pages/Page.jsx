@@ -14,10 +14,10 @@ export const Page = () => {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<DefaultProductPage />} />
-        <Route path="products/:productName/" element={<ProductInfoPage/>} />
-        <Route path="favorites/" element={<FavoriteProductPage/>} />
-        <Route path="cart/" element={<CartProductPage/>} />
+        <Route path="apple-ecommerce/" element={<DefaultProductPage />} />
+        <Route path="apple-ecommerce/products/:productName/" element={<ProductInfoPage/>} />
+        <Route path="apple-ecommerce/favorites/" element={<FavoriteProductPage/>} />
+        <Route path="apple-ecommerce/cart/" element={<CartProductPage/>} />
       </Routes>
     </>
   );
