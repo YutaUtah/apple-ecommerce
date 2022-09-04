@@ -17,8 +17,8 @@ export const RightProductDetails = (props) => {
   return (
     <div>
       <TotalBox price={item.price}/>
-      <PrimaryButton buttonTitle="Add Favorite" changeItemClick={() => addFavItem({item})} buttonStyles={styles.buttonStyles} boxStyles={styles.productBoxStyles} />
-      <PrimaryButton buttonTitle="Add Cart" changeItemClick={() => addCartItem({item})} buttonStyles={styles.buttonStyles} boxStyles={styles.productBoxStyles} />
+      <PrimaryButton buttonTitle="Add Favorite" changeItemState={() => addFavItem({item})} buttonStyles={styles.buttonStyles} boxStyles={styles.productBoxStyles} />
+      <PrimaryButton buttonTitle="Add Cart" changeItemState={() => addCartItem({item})} buttonStyles={styles.buttonStyles} boxStyles={styles.productBoxStyles} />
       <Link to={`/apple-ecommerce/cart`} >
         <PrimaryButton buttonTitle="Go To Cart Page" buttonStyles={styles.buttonStyles} boxStyles={styles.productBoxStyles} />
       </Link>
