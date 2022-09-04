@@ -13,6 +13,8 @@ export const FavoriteProductPage = () => {
     <div>
       <Container>
         <h1>Favorite List</h1>
+        { ( Object.keys(favList).length === 0 ) ? <div><h1 className="display-5 mt-3">You have no favorites</h1></div>:
+        <>
         {Object.keys(favList).map((key) => {
           return (
             <div>
@@ -24,6 +26,8 @@ export const FavoriteProductPage = () => {
             </div>
           );
         })}
+        </>
+        }
       </Container>
     </div>
   );
