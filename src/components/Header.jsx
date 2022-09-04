@@ -15,7 +15,7 @@ export const Header = () => {
       <Box sx={{ pb: 15 }}>
         <AppBar style={{ background: "#2E3B55" }}>
           <Toolbar>
-            <Link to={'apple-ecommerce'} >
+            <Link to={'/apple-ecommerce'} >
               <AppleIconButton/>
             </Link>
             <Typography variant="h6">Apple E-Commerce</Typography>
