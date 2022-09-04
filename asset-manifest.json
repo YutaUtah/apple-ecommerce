@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/apple-ecommerce/static/css/main.c1122a29.css",
-    "main.js": "/apple-ecommerce/static/js/main.7961fa41.js",
+    "main.js": "/apple-ecommerce/static/js/main.85d4bbcb.js",
     "static/js/787.55b80d59.chunk.js": "/apple-ecommerce/static/js/787.55b80d59.chunk.js",
     "index.html": "/apple-ecommerce/index.html",
     "main.c1122a29.css.map": "/apple-ecommerce/static/css/main.c1122a29.css.map",
-    "main.7961fa41.js.map": "/apple-ecommerce/static/js/main.7961fa41.js.map",
+    "main.85d4bbcb.js.map": "/apple-ecommerce/static/js/main.85d4bbcb.js.map",
     "787.55b80d59.chunk.js.map": "/apple-ecommerce/static/js/787.55b80d59.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c1122a29.css",
-    "static/js/main.7961fa41.js"
+    "static/js/main.85d4bbcb.js"
   ]
 }
