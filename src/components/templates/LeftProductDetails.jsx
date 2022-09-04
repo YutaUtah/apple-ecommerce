@@ -9,7 +9,7 @@ export const LeftProductDetails = (props) => {
   return (
     <div>
       <div className="d-flex justify-content-center">
-      <img src={"/" + product.image} height="300" width="350" />
+      <img src={product.image} height="300" width="350" />
       </div>
       <div className="d-flex p-2 justify-content-between">
         <h2>{product.productName}</h2>
