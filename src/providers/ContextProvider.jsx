@@ -77,28 +77,40 @@ const ContextProvider = (props) => {
     const proceedPayItem = (cartList) => {
         const totalPrice = totalPriceCalculator(cartList)
         alert(`Paid ${totalPrice} USD`)
-        // alert("proceeded item!")
     }
 
-    const sortHandleChange = (event, item) => {
+    const sortHandleChange = (event) => {
+        const productListCopy = {...productList};
         switch (event.target.value) {
             case "ascending":
-                Object.entries(productList).map(([key, value]) => (value.sort((a, b) => (a.price > b.price) ? 1 : -1)))
+                Object.values(productListCopy).map(( value ) => (value.sort((a, b) => (a.price > b.price) ? 1 : -1)))
                 break;
             case "descending":
-                Object.entries(productList).map(([key, value]) => (value.sort((a, b) => (a.price < b.price) ? 1 : -1)))
+                Object.values(productListCopy).map(( value ) => (value.sort((a, b) => (a.price < b.price) ? 1 : -1)))
                 break;
             default:
                 break;
         }
-        setProductItem(item)
+        // mutability and immutability because state only trigger to recognize the difference, to overcome need deepcopy
+        setProductList(productListCopy)
     }
 
     const filterHandleChange = (event) => {
+        const productListCopy = {...productList};
         switch (event.target.value) {
-            case "moreThanOneThousand":
-                console.log('$1000 hits')
+            case "Mac":
+                let filterediPhone = Object.keys(productListCopy).reduce(function (filtered, key) {
+                    if ( key === "Mac") filtered[key] = productListCopy[key];
+                    return filtered;
+                }, {});
+                setProductList(filterediPhone)
                 break;
+            case "iPhone":
+                let filteredMac = Object.keys(productListCopy).reduce(function (filtered, key) {
+                    if ( key === "iPhone") filtered[key] = productListCopy[key];
+                    return filtered;
+                }, {});
+                setProductList(filteredMac)
             default:
                 console.log('neither')
         }
