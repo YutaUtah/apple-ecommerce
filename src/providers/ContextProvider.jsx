@@ -16,7 +16,6 @@ const ContextProvider = (props) => {
     const [cartList, setCartList] = useState({});
 
     const [productList, setProductList] = useState(globalProductList);
-    const [productItem, setProductItem] = useState({})
 
     const displayPrice = (price) =>  `$${price}`;
 
